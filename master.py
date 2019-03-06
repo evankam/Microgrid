@@ -3,7 +3,7 @@ import time
 import random
 from tkinter import *
 from decimal import Decimal
-test
+
 #class house
 #class event
 #class dispatcher
@@ -12,14 +12,6 @@ test
 #class other functions
 
 # board = Arduino('COM4')
-
-
-
-
-
-
-
-
 
 # house1.connect_to_main() #red and yellow LED
 # house2.connect_to_main()

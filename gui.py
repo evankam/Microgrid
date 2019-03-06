@@ -36,7 +36,6 @@ label_6.grid(row = 3, sticky =E)
 label_7.grid(row = 3, column = 1)
 
 
-
 def set_label():
     label_3['text'] = house3.supply
     label_4['text'] = str(round(house3.charge,2)) + "%"
