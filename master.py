@@ -4,12 +4,6 @@ import random
 from tkinter import *
 from decimal import Decimal
 
-#class house
-#class event
-#class dispatcher
-#class gui
-#class run
-#class other functions
 
 # board = Arduino('COM4')
 
