@@ -153,6 +153,7 @@ def animate(i):
     a.plot(xlist, ylist)
 
 ani = animation.FuncAnimation(f,animate, interval = 2000)
+open('sampleData.txt', 'w').close()
 
 def set_label():
     label_16['text'] = house1.supply
@@ -319,8 +320,8 @@ class Dispatcher:
                 print("house" + index + " charge = " + charge )
                 print("house" + index + " bank acc = " + bankacc)
             print(self.event_list[i].load_usage)
-            pullData1 = open("sampleData.txt","w+")
-            pullData1.write(str(int(house2.charge))+ "," + str(int(house2.bankaccount)) +"\n")
+            pullData1 = open("sampleData.txt","a+")
+            pullData1.write(str(i)+ "," + str(int(house2.charge)) +"\n")
             pullData1.close()
             loop_active = True
             while loop_active:

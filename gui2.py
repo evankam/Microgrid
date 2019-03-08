@@ -14,6 +14,28 @@ labelfontattributes = ('times', 20)
 labelfontnumbers = ("times", 20, 'italic')
 style.use("ggplot")
 
+f = Figure (figsize = (3,3), dpi = 100)
+a = f.add_subplot(111)
+# a.plot([1,2,3,4,5,6,7,8], [10,9,8,7,6,5,4,3])
+canvas = FigureCanvasTkAgg(f)
+canvas.get_tk_widget().grid(row = 20)
+
+def animate(i):
+    pullData = open("sampleData.txt","r").read() #grab list of data
+    dataList = pullData.split('\n') #separate
+    xlist = []
+    ylist = []
+    for eachline in dataList:
+        if len(eachline)> 1:
+            x,y = eachline.split(',')
+            xlist.append(int(x))
+            ylist.append(int(y))
+    a.clear()
+    a.plot(xlist, ylist)
+
+ani = animation.FuncAnimation(f,animate, interval = 2000)
+open('sampleData.txt', 'w').close()
+
 root = Tk()
 root2=Tk()
 
@@ -119,25 +141,9 @@ label_26.grid(row = 6, column = 7)
 label_27.grid(row = 6, column = 10)
 
 
-f = Figure (figsize = (3,3), dpi = 100)
-a = f.add_subplot(111)
-# a.plot([1,2,3,4,5,6,7,8], [10,9,8,7,6,5,4,3])
-canvas = FigureCanvasTkAgg(f)
-canvas.get_tk_widget().grid(row = 20)
 
 
-def animate(i):
-    pullData = open("sampleData.txt","r").read() #grab list of data
-    dataList = pullData.split('\n') #separate
-    xlist = []
-    ylist = []
-    for eachline in dataList:
-        if len(eachline)> 1:
-            x,y = eachline.split(',')
-            xlist.append(int(x))
-            ylist.append(int(y))
-    a.clear()
-    a.plot(xlist, ylist)
+
 
 ani = animation.FuncAnimation(f,animate)
 root.mainloop()

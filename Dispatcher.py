@@ -77,7 +77,9 @@ class Dispatcher:
                 print("house" + index + " charge = " + charge )
                 print("house" + index + " bank acc = " + bankacc)
             print(self.event_list[i].load_usage)
-            print(house3.supply)
+            pullData1 = open("sampleData.txt","a+")
+            pullData1.write(str(i)+ "," + str(int(house2.charge)) +"\n")
+            pullData1.close()
             loop_active = True
             while loop_active:
                 root.update()
