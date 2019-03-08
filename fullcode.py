@@ -133,16 +133,15 @@ label_26.grid(row = 6, column = 7)
 label_27.grid(row = 6, column = 10)
 
 
-f = Figure (figsize = (3,3), dpi = 100)
+f = Figure (figsize = (5,5), dpi = 100)
 a = f.add_subplot(111)
-# a.plot([1,2,3,4,5,6,7,8], [10,9,8,7,6,5,4,3])
 canvas = FigureCanvasTkAgg(f)
-canvas.get_tk_widget().grid(row = 20)
+canvas.get_tk_widget().pack(fill = BOTH, expand = True)
 
 
-def animate(xlist,ylist):
-    # pullData = open("sampleData.txt","r").read() #grab list of data
-    # dataList = pullData.split('\n') #separate
+def animate(i):
+    pullData = open("sampleData.txt","r").read() #grab list of data
+    dataList = pullData.split('\n') #separate
     xlist = []
     ylist = []
     for eachline in dataList:
@@ -153,7 +152,7 @@ def animate(xlist,ylist):
     a.clear()
     a.plot(xlist, ylist)
 
-ani = animation.FuncAnimation(f,animate, interval = 100000)
+ani = animation.FuncAnimation(f,animate, interval = 2000)
 
 def set_label():
     label_16['text'] = house1.supply
@@ -171,30 +170,6 @@ def set_label():
     root2.after(2000, set_label)
 
 
-class Graphs(tk.Frame):
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        label2 = tk.Label(self, text = "Graphs!!", font = labelfonthouse)
-        label2.pack()
-        button2 = tk.Button(self, text = "Back to List", command = lambda: controller.show_frame(Start_Page))
-        button2.pack()
-
-        # f = Figure (figsize = (5,5), dpi = 100)
-        # a = f.add_subplot(111)
-        # a.plot([1,2,3,4,5,6,7,8], [10,9,8,7,6,5,4,3])
-
-        canvas = FigureCanvasTkAgg(f, self)
-        # canvas.show()
-        canvas.get_tk_widget().pack(side = tk.TOP, fill = tk.BOTH, expand = True)
-
-        toolbar = NavigationToolbar2Tk(canvas,self)
-        toolbar.update()
-        canvas._tkcanvas.pack(side = tk.TOP, fill = tk.BOTH, expand = True)
-
-
-app = frame_maker()
-
-Page_one = Start_Page(app, complex)
 
 
 class House:
@@ -212,25 +187,25 @@ class House:
 
 
     def connect_to_solar(self):
-            first_relay_to_change = self.firstrelay+1
-            second_relay_to_change = self.secondrelay+1
-            board.digital[first_relay_to_change].write(0)   #turns the first relay on
-            board.digital[second_relay_to_change].write(0)  #turns the second relay on
-            self.supply = 'own battery'
+        first_relay_to_change = self.firstrelay+1
+        second_relay_to_change = self.secondrelay+1
+        board.digital[first_relay_to_change].write(0)   #turns the first relay on
+        board.digital[second_relay_to_change].write(0)  #turns the second relay on
+        self.supply = 'own battery'
 
     def connect_to_main(self):
-            first_relay_to_change = self.firstrelay+1
-            second_relay_to_change = self.secondrelay+1
-            board.digital[first_relay_to_change].write(1)   #turns the first relay off
-            board.digital[second_relay_to_change].write(0)  #turns the second relay on
-            self.supply = 'main generator'
+        first_relay_to_change = self.firstrelay+1
+        second_relay_to_change = self.secondrelay+1
+        board.digital[first_relay_to_change].write(1)   #turns the first relay off
+        board.digital[second_relay_to_change].write(0)  #turns the second relay on
+        self.supply = 'main generator'
 
     def connect_to_other_house(self):
-            first_relay_to_change = self.firstrelay+1
-            second_relay_to_change = self.secondrelay+1
-            board.digital[first_relay_to_change].write(0)   #turns the first relay on
-            board.digital[second_relay_to_change].write(1)  #turns the second relay off
-            self.supply = 'exchange'
+        first_relay_to_change = self.firstrelay+1
+        second_relay_to_change = self.secondrelay+1
+        board.digital[first_relay_to_change].write(0)   #turns the first relay on
+        board.digital[second_relay_to_change].write(1)  #turns the second relay off
+        self.supply = 'exchange'
 
     def add_event(self, event):
         self.list_events.append(event)
@@ -344,10 +319,13 @@ class Dispatcher:
                 print("house" + index + " charge = " + charge )
                 print("house" + index + " bank acc = " + bankacc)
             print(self.event_list[i].load_usage)
+            pullData1 = open("sampleData.txt","w+")
+            pullData1.write(str(int(house2.charge))+ "," + str(int(house2.bankaccount)) +"\n")
+            pullData1.close()
             loop_active = True
             while loop_active:
                 root2.update()
-                Page_one.set_label(app)
+                set_label()
                 if i == len(self.event_list):
                     root.quit()
                     root2.quit()
