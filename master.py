@@ -4,8 +4,8 @@ import random
 #from tkinter import *
 from decimal import Decimal
 import houses
-import gui
-import gui2
+#import gui
+#import gui2
 import events
 import Dispatcher
 import otherfunctions
@@ -26,7 +26,7 @@ import otherfunctions
 # house1.connect_to_solar()
 # house2.connect_to_solar()
 # house3.connect_to_solar()
-# house4.connect_to_solar()
+#house4.connect_to_solar()
 
 #hey just a test for github
 
