@@ -152,7 +152,7 @@ def animate(i):
     a.clear()
     a.plot(xlist, ylist)
 
-ani = animation.FuncAnimation(f,animate, interval = 2000)
+ani = animation.FuncAnimation(f,animate)
 open('sampleData.txt', 'w').close()
 
 def set_label():
