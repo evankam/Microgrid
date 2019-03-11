@@ -1,5 +1,5 @@
 from pyfirmata import Arduino,util
-board = Arduino('COM4')
+board = Arduino('COM5')
 board_bis = Arduino('COM8')
 
 
