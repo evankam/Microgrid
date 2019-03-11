@@ -1,14 +1,8 @@
 from pyfirmata import Arduino,util
 import time
 import random
-#from tkinter import *
+from tkinter import *
 from decimal import Decimal
-import houses
-import gui
-import gui2
-import events
-import Dispatcher
-import otherfunctions
 
 
 # board = Arduino('COM4')

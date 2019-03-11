@@ -1,3 +1,8 @@
+from pyfirmata import Arduino,util
+board = Arduino('COM4')
+board_bis = Arduino('COM8')
+
+
 class House:
     def _init_(self):
         self.supply = 'main Generator'
@@ -18,6 +23,23 @@ class House:
             board.digital[first_relay_to_change].write(0)   #turns the first relay on
             board.digital[second_relay_to_change].write(0)  #turns the second relay on
             self.supply = 'own battery'
+            if self.number ==1:
+                board_bis.digital[2].write(0)
+                board_bis.digital[3].write(0)
+                board_bis.digital[4].write(1)
+            if self.number ==2:
+                board_bis.digital[5].write(0)
+                board_bis.digital[6].write(0)
+                board_bis.digital[7].write(1)
+            if self.number ==3:
+                board_bis.digital[8].write(0)
+                board_bis.digital[9].write(0)
+                board_bis.digital[10].write(1) 
+            if self.number ==4:
+                board_bis.digital[11].write(0)
+                board_bis.digital[12].write(0)
+                board_bis.digital[13].write(1)  
+                
 
     def connect_to_main(self):
             first_relay_to_change = self.firstrelay+1
@@ -25,6 +47,22 @@ class House:
             board.digital[first_relay_to_change].write(1)   #turns the first relay off
             board.digital[second_relay_to_change].write(0)  #turns the second relay on
             self.supply = 'main generator'
+            if self.number ==1:
+                board_bis.digital[2].write(0)
+                board_bis.digital[3].write(1)
+                board_bis.digital[4].write(0)
+            if self.number ==2:
+                board_bis.digital[5].write(0)
+                board_bis.digital[6].write(1)
+                board_bis.digital[7].write(0)
+            if self.number ==3:
+                board_bis.digital[8].write(0)
+                board_bis.digital[9].write(1)
+                board_bis.digital[10].write(0) 
+            if self.number ==4:
+                board_bis.digital[11].write(0)
+                board_bis.digital[12].write(1)
+                board_bis.digital[13].write(0) 
 
     def connect_to_other_house(self):
             first_relay_to_change = self.firstrelay+1
@@ -32,6 +70,22 @@ class House:
             board.digital[first_relay_to_change].write(0)   #turns the first relay on
             board.digital[second_relay_to_change].write(1)  #turns the second relay off
             self.supply = 'exchange'
+            if self.number ==1:
+                board_bis.digital[2].write(1)
+                board_bis.digital[3].write(0)
+                board_bis.digital[4].write(0)
+            if self.number ==2:
+                board_bis.digital[5].write(1)
+                board_bis.digital[6].write(0)
+                board_bis.digital[7].write(0)
+            if self.number ==3:
+                board_bis.digital[8].write(1)
+                board_bis.digital[9].write(0)
+                board_bis.digital[10].write(0) 
+            if self.number ==4:
+                board_bis.digital[11].write(1)
+                board_bis.digital[12].write(0)
+                board_bis.digital[13].write(0) 
 
     def add_event(self, event):
         self.list_events.append(event)

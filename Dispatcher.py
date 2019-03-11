@@ -24,6 +24,7 @@ class Dispatcher:
             trueindex = str(i+1)
             print("event" + trueindex)
             self.solar_event(self.event_list[i], list_house)
+            time = self.event_list[i].time
             house_event = self.event_list[i].house
             houseevent= str(house_event)
             list_houses = house_event.neighbour
