@@ -83,10 +83,12 @@ class Dispatcher:
             pullData1.close()
             loop_active = True
             while loop_active:
-                root.update()
+                root2.update()
                 set_label()
                 if i == len(self.event_list):
                     root.quit()
+                    root2.quit()
                     loop_active = False
                 else:
                     break
+

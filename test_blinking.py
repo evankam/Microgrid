@@ -11,7 +11,7 @@ import random
 from decimal import Decimal
 
 
-board = Arduino('COM8')
+board = Arduino('COM3')
 
 board.digital[2].write(1)
 board.digital[4].write(1)
