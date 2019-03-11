@@ -1,6 +1,11 @@
 from pyfirmata import Arduino,util
+<<<<<<< HEAD
+board = Arduino('COM5')
+board_bis = Arduino('COM8')
+=======
 # board = Arduino('COM4')
 board_bis = Arduino('COM3')
+>>>>>>> 33288ea90ce550a6aff3c928cb8436fc03d6ccf4
 
 
 class House:
@@ -144,6 +149,12 @@ house4.bankaccount = 500
 house4.list_events = []
 house4.neighbour = []
 house4.number = 0
+
+house1.connect_to_solar()
+house2.connect_to_main()
+house3.connect_to_solar()
+house4.connect_to_other_house()
+
 
 list_house = [house1,house2,house3,house4]
 for i in range (0,len(list_house)):
