@@ -23,8 +23,8 @@ class House:
     def connect_to_solar(self):
             first_relay_to_change = self.firstrelay+1
             second_relay_to_change = self.secondrelay+1
-            board.digital[first_relay_to_change].write(0)   #turns the first relay on
-            board.digital[second_relay_to_change].write(0)  #turns the second relay on
+            # board.digital[first_relay_to_change].write(0)   #turns the first relay on
+            # board.digital[second_relay_to_change].write(0)  #turns the second relay on
             self.supply = 'own battery'
             if self.number ==1:
                 board_bis.digital[2].write(0)
@@ -47,8 +47,8 @@ class House:
     def connect_to_main(self):
             first_relay_to_change = self.firstrelay+1
             second_relay_to_change = self.secondrelay+1
-            board.digital[first_relay_to_change].write(1)   #turns the first relay off
-            board.digital[second_relay_to_change].write(0)  #turns the second relay on
+            # board.digital[first_relay_to_change].write(1)   #turns the first relay off
+            # board.digital[second_relay_to_change].write(0)  #turns the second relay on
             self.supply = 'main generator'
             if self.number ==1:
                 board_bis.digital[2].write(0)
@@ -70,8 +70,8 @@ class House:
     def connect_to_other_house(self):
             first_relay_to_change = self.firstrelay+1
             second_relay_to_change = self.secondrelay+1
-            board.digital[first_relay_to_change].write(0)   #turns the first relay on
-            board.digital[second_relay_to_change].write(1)  #turns the second relay off
+            # board.digital[first_relay_to_change].write(0)   #turns the first relay on
+            # board.digital[second_relay_to_change].write(1)  #turns the second relay off
             self.supply = 'exchange'
             if self.number ==1:
                 board_bis.digital[2].write(1)
@@ -156,3 +156,7 @@ for i in range (0,len(list_house)):
     del houses[i]
     list_house[i].neighbour = houses
 
+house1.connect_to_main()
+house2.connect_to_solar()
+house3.connect_to_solar()
+house4.connect_to_other_house()
