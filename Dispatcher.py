@@ -81,6 +81,9 @@ class Dispatcher:
             pullData1 = open("sampleData.txt","a+")
             pullData1.write(str(i)+ "," + str(int(house2.charge)) +"\n")
             pullData1.close()
+            pullData2 = open("sampledata2.txt","a+")
+            pullData2.write(str(i)+ "," + str(int(house3.charge)) +"\n")
+            pullData2.close()
             loop_active = True
             while loop_active:
                 root2.update()
