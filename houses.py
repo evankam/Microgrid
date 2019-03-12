@@ -1,7 +1,7 @@
 from pyfirmata import Arduino,util
 
-board = Arduino('COM5')
-board_bis = Arduino('COM8')
+# board = Arduino('COM5')
+board_bis = Arduino('COM3')
 
 
 
@@ -146,7 +146,7 @@ house4.charge = 10
 house4.bankaccount = 500
 house4.list_events = []
 house4.neighbour = []
-house4.number = 0
+house4.number = 4
 
 
 
@@ -160,3 +160,4 @@ house1.connect_to_main()
 house2.connect_to_solar()
 house3.connect_to_solar()
 house4.connect_to_other_house()
+

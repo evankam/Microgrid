@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12729c28-4114-4336-a3ef-a509c84d96b6" name="Default Changelist" comment="" />
+    <list default="true" id="12729c28-4114-4336-a3ef-a509c84d96b6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/houses.py" beforeDir="false" afterPath="$PROJECT_DIR$/houses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sampleData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sampleData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sampledata2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sampledata2.txt" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fullcode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="391" column="12" selection-start-line="391" selection-start-column="12" selection-end-line="396" selection-end-column="29" />
+            <state relative-caret-position="357">
+              <caret line="164" column="79" selection-start-line="164" selection-start-column="79" selection-end-line="164" selection-end-column="79" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -66,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/houses.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1698">
-              <caret line="157" selection-start-line="157" selection-end-line="157" />
+            <state relative-caret-position="304">
+              <caret line="159" column="24" selection-start-line="159" selection-start-column="24" selection-end-line="159" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -103,10 +107,10 @@
         <option value="$PROJECT_DIR$/gui.py" />
         <option value="$PROJECT_DIR$/scratch.py" />
         <option value="$PROJECT_DIR$/test_blinking.py" />
-        <option value="$PROJECT_DIR$/houses.py" />
-        <option value="$PROJECT_DIR$/fullcode.py" />
         <option value="$PROJECT_DIR$/gui2.py" />
         <option value="$PROJECT_DIR$/Dispatcher.py" />
+        <option value="$PROJECT_DIR$/fullcode.py" />
+        <option value="$PROJECT_DIR$/houses.py" />
       </list>
     </option>
   </component>
@@ -160,7 +164,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.fullcode">
+  <component name="RunManager" selected="Python.houses">
     <configuration name="fullcode" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="scratches" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -268,9 +272,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.houses" />
         <item itemvalue="Python.fullcode" />
         <item itemvalue="Python.gui2" />
-        <item itemvalue="Python.houses" />
         <item itemvalue="Python.test_blinking" />
         <item itemvalue="Python.master" />
       </list>
@@ -292,7 +296,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32950193" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32950193" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32950193" />
@@ -300,6 +304,32 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scratch.py">
@@ -336,9 +366,6 @@
     <entry file="file://$PROJECT_DIR$/sampleData.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/sampledata2">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/gui2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1294">
@@ -350,13 +377,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/houses.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1698">
-          <caret line="157" selection-start-line="157" selection-end-line="157" />
         </state>
       </provider>
     </entry>
@@ -377,13 +397,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sampledata2">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/fullcode.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="391" column="12" selection-start-line="391" selection-start-column="12" selection-end-line="396" selection-end-column="29" />
+        <state relative-caret-position="357">
+          <caret line="164" column="79" selection-start-line="164" selection-start-column="79" selection-end-line="164" selection-end-column="79" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/houses.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="159" column="24" selection-start-line="159" selection-start-column="24" selection-end-line="159" selection-end-column="24" />
         </state>
       </provider>
     </entry>
