@@ -7,7 +7,7 @@ from decimal import Decimal
 
 # board = Arduino('COM4')
 
-from tkinter import *
+from Tkinter import *
 import matplotlib
 matplotlib.use("TkAgg")
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
@@ -15,7 +15,7 @@ from matplotlib.figure import Figure
 import matplotlib.animation as animation
 from matplotlib import style
 
-import args as args
+
 
 Largefont = ("Verdana", 12 )
 labelfonthouse = ('times', 50, 'bold')

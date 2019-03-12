@@ -159,5 +159,4 @@ for i in range (0,len(list_house)):
 house1.connect_to_main()
 house2.connect_to_solar()
 house3.connect_to_solar()
-house4.connect_to_other_house()
 

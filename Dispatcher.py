@@ -87,15 +87,15 @@ class Dispatcher:
             pullData1.write(str(i)+ "," + str(int(houses.house2.charge)) +"\n")
             pullData1.close()
             pullData2 = open("sampledata2.txt","a+")
-            pullData2.write(str(i)+ "," + str(int(house3.charge)) +"\n")
+            pullData2.write(str(i)+ "," + str(int(houses.house3.charge)) +"\n")
             pullData2.close()
             loop_active = True
             while loop_active:
-                root2.update()
-                set_label()
+                gui2.root2.update()
+                gui2.set_label()
                 if i == len(self.event_list):
-                    root.quit()
-                    root2.quit()
+                    gui2.root.quit()
+                    gui2.root2.quit()
                     loop_active = False
                 else:
                     break
