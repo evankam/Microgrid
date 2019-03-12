@@ -161,8 +161,8 @@ def animate(i):
             x2list.append(int(x))
             y2list.append(int(y))
     a.clear()
-    a.plot(xlist, ylist, marker = 'o', markerfacecolor = 'blue', color = 'red')
     b.clear()
+    a.plot(xlist, ylist, marker = 'o', markerfacecolor = 'blue', color = 'red')
     b.plot(x2list,y2list, marker = 'o', markerfacecolor = 'red', color = 'blue')
 
 ani = animation.FuncAnimation(f,animate)
