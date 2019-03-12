@@ -16,63 +16,75 @@ style.use("ggplot")
 
 f = Figure (figsize = (3,3), dpi = 100)
 a = f.add_subplot(111)
+b = f.add_subplot(111)
 # a.plot([1,2,3,4,5,6,7,8], [10,9,8,7,6,5,4,3])
 canvas = FigureCanvasTkAgg(f)
 canvas.get_tk_widget().grid(row = 20)
 
 def animate(i):
-    pullData = open("sampleData.txt","r").read() #grab list of data
-    dataList = pullData.split('\n') #separate
+    pullData = open("sampleData.txt","r").read()
+    pulldata = open("sampledata2.txt","r").read()#grab list of data
+    dataList = pullData.split('\n')
+    dataList2 = pulldata.split('\n')#separate
     xlist = []
     ylist = []
+    x2list = []
+    y2list = []
     for eachline in dataList:
         if len(eachline)> 1:
             x,y = eachline.split(',')
             xlist.append(int(x))
             ylist.append(int(y))
+    for eachline in dataList2:
+        if len(eachline)>1:
+            x,y = eachline.split(',')
+            x2list.append(int(x))
+            y2list.append(int(y))
     a.clear()
-    a.plot(xlist, ylist)
+    a.plot(xlist, ylist, marker = 'o', markerfacecolor = 'blue', color = 'red')
+    b.clear()
+    b.plot(x2list,y2list, marker = 'o', markerfacecolor = 'red', color = 'blue')
 
-ani = animation.FuncAnimation(f,animate, interval = 2000)
+ani = animation.FuncAnimation(f,animate)
 open('sampleData.txt', 'w').close()
 
 root = Tk()
 root2=Tk()
 
-label_0 = tk.Label(root2, text = "House1")
-label_1 = tk.Label(root2, text = "House2")
-label_2 = tk.Label(root2, text = "House3")
-label_3 = tk.Label(root2, text = "House4")
+label_0 = Label(root2, text = "House1")
+label_1 = Label(root2, text = "House2")
+label_2 = Label(root2, text = "House3")
+label_3 = Label(root2, text = "House4")
 
-label_4 = tk.Label(root2, text = "State:")
-label_5 = tk.Label(root2, text = "State:")
-label_6 = tk.Label(root2, text = "State:")
-label_7 = tk.Label(root2, text = "State:")
+label_4 = Label(root2, text = "State:")
+label_5 = Label(root2, text = "State:")
+label_6 = Label(root2, text = "State:")
+label_7 = Label(root2, text = "State:")
 
-label_8 = tk.Label(root2, text = "Charge:")
-label_9 = tk.Label(root2, text = "Charge:")
-label_10 = tk.Label(root2, text = "Charge:")
-label_11 = tk.Label(root2, text = "Charge:")
+label_8 = Label(root2, text = "Charge:")
+label_9 = Label(root2, text = "Charge:")
+label_10 = Label(root2, text = "Charge:")
+label_11 = Label(root2, text = "Charge:")
 
-label_12 = tk.Label(root2, text = "Bank Account:")
-label_13 = tk.Label(root2, text = "Bank Account:")
-label_14 = tk.Label(root2, text = "Bank Account:")
-label_15 = tk.Label(root2, text = "Bank Account:")
+label_12 = Label(root2, text = "Bank Account:")
+label_13 = Label(root2, text = "Bank Account:")
+label_14 = Label(root2, text = "Bank Account:")
+label_15 = Label(root2, text = "Bank Account:")
 
-label_16 = tk.Label(root2, text = "Initializing")
-label_17 = tk.Label(root2, text = "Initializing")
-label_18 = tk.Label(root2, text = "Initializing")
-label_19 = tk.Label(root2, text = "Initializing")
+label_16 = Label(root2, text = "Initializing")
+label_17 = Label(root2, text = "Initializing")
+label_18 = Label(root2, text = "Initializing")
+label_19 = Label(root2, text = "Initializing")
 
-label_20 = tk.Label(root2, text = "Initializing")
-label_21 = tk.Label(root2, text = "Initializing")
-label_22 = tk.Label(root2, text = "Initializing")
-label_23 = tk.Label(root2, text = "Initializing")
+label_20 = Label(root2, text = "Initializing")
+label_21 = Label(root2, text = "Initializing")
+label_22 = Label(root2, text = "Initializing")
+label_23 = Label(root2, text = "Initializing")
 
-label_24 = tk.Label(root2, text = "Initializing")
-label_25 = tk.Label(root2, text = "Initializing")
-label_26 = tk.Label(root2, text = "Initializing")
-label_27 = tk.Label(root2, text = "Initializing")
+label_24 = Label(root2, text = "Initializing")
+label_25 = Label(root2, text = "Initializing")
+label_26 = Label(root2, text = "Initializing")
+label_27 = Label(root2, text = "Initializing")
 
 label_0.config(font=labelfonthouse)
 label_1.config(font=labelfonthouse)
