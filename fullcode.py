@@ -7,7 +7,7 @@ from decimal import Decimal
 
 # board = Arduino('COM4')
 
-from Tkinter import *
+from tkinter import *
 import matplotlib
 matplotlib.use("TkAgg")
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk

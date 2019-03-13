@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12729c28-4114-4336-a3ef-a509c84d96b6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Dispatcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dispatcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fullcode.py" beforeDir="false" afterPath="$PROJECT_DIR$/fullcode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui2.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/houses.py" beforeDir="false" afterPath="$PROJECT_DIR$/houses.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sampleData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sampleData.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sampledata2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sampledata2.txt" afterDir="false" />
     </list>
@@ -41,11 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fullcode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="164" column="79" selection-start-line="164" selection-start-column="79" selection-end-line="164" selection-end-column="79" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="153">
+              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -76,8 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/houses.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="153" column="3" selection-start-line="153" selection-start-column="3" selection-end-line="153" selection-end-column="3" />
+            <state relative-caret-position="1562">
+              <caret line="161" selection-start-line="161" selection-end-line="161" />
             </state>
           </provider>
         </entry>
@@ -112,8 +107,8 @@
         <option value="$PROJECT_DIR$/test_blinking.py" />
         <option value="$PROJECT_DIR$/gui2.py" />
         <option value="$PROJECT_DIR$/Dispatcher.py" />
-        <option value="$PROJECT_DIR$/fullcode.py" />
         <option value="$PROJECT_DIR$/houses.py" />
+        <option value="$PROJECT_DIR$/fullcode.py" />
       </list>
     </option>
   </component>
@@ -167,7 +162,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.houses">
+  <component name="RunManager" selected="Python.fullcode">
     <configuration name="fullcode" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="scratches" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -275,8 +270,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.houses" />
         <item itemvalue="Python.fullcode" />
+        <item itemvalue="Python.houses" />
         <item itemvalue="Python.gui2" />
         <item itemvalue="Python.test_blinking" />
         <item itemvalue="Python.master" />
@@ -288,13 +283,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16282527" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32950193" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35121328" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.35121328" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -390,6 +384,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sampledata2">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/houses.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1562">
+          <caret line="161" selection-start-line="161" selection-end-line="161" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Dispatcher.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -400,23 +404,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sampledata2">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/houses.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="153" column="3" selection-start-line="153" selection-start-column="3" selection-end-line="153" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fullcode.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="164" column="79" selection-start-line="164" selection-start-column="79" selection-end-line="164" selection-end-column="79" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
         </state>
       </provider>
     </entry>
