@@ -334,6 +334,7 @@ class Dispatcher:
             house_event = self.event_list[i].house
             houseevent= str(house_event)
             list_houses = house_event.neighbour
+            time1 = self.event_list[i].time
             if self.event_list[i].load_usage < house_event.charge:               #we use the battery if we have enough power
                 house_event.charge += - self.event_list[i].load_usage
                 # house_event.connect_to_solar()
@@ -390,10 +391,10 @@ class Dispatcher:
                 print("house" + index + " bank acc = " + bankacc)
             print(self.event_list[i].load_usage)
             pullData1 = open("sampleData.txt","a+")
-            pullData1.write(str(i)+ "," + str(int(house2.charge)) +"\n")
+            pullData1.write(str(time1)+ "," + str(int(house2.charge)) +"\n")
             pullData1.close()
             pullData2 = open("sampledata2.txt","a+")
-            pullData2.write(str(i)+ "," + str(int(house3.charge)) +"\n")
+            pullData2.write(str(time1)+ "," + str(int(house3.charge)) +"\n")
             pullData2.close()
             loop_active = True
             while loop_active:
