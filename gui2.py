@@ -1,5 +1,4 @@
-import Tkinter as tk
-from Tkinter import *
+from tkinter import *
 import matplotlib
 matplotlib.use("TkAgg")
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
@@ -49,7 +48,7 @@ ani = animation.FuncAnimation(f,animate)
 open('sampleData.txt', 'w').close()
 
 root = Tk()
-root2=Tk()
+root2= Tk()
 
 label_0 = Label(root2, text = "House1")
 label_1 = Label(root2, text = "House2")
