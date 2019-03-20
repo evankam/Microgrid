@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12729c28-4114-4336-a3ef-a509c84d96b6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/gui2.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/houses.py" beforeDir="false" afterPath="$PROJECT_DIR$/houses.py" afterDir="false" />
-    </list>
+    <list default="true" id="12729c28-4114-4336-a3ef-a509c84d96b6" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +122,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1358" />
     <option name="width" value="1390" />
     <option name="height" value="1756" />
@@ -296,13 +293,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16208178" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32950193" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35121328" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.35121328" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
