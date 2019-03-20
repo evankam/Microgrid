@@ -137,19 +137,29 @@ label_27.grid(row = 6, column = 10)
 f = Figure (figsize = (5,5), dpi = 100)
 a = f.add_subplot(111)
 b = f.add_subplot(111)
+c = f.add_subplot(111)
+d = f.add_subplot(111)
 canvas = FigureCanvasTkAgg(f)
 canvas.get_tk_widget().pack(fill = BOTH, expand = True)
 
 
 def animate(i):
     pullData = open("sampleData.txt","r").read()
-    pulldata = open("sampledata2.txt","r").read()#grab list of data
+    pullData2 = open("sampleData2.txt","r").read()
+    pullData3 = open("sampleData3.txt","r").read()
+    pullData4 = open("sampleData4.txt","r").read()#grab list of data
     dataList = pullData.split('\n')
-    dataList2 = pulldata.split('\n')#separate
+    dataList2 = pullData2.split('\n')
+    dataList3 = pullData3.split('\n')
+    dataList4 = pullData4.split('\n')#separate
     xlist = []
     ylist = []
     x2list = []
     y2list = []
+    x3list = []
+    y3list = []
+    x4list = []
+    y4list = []
     for eachline in dataList:
         if len(eachline)> 1:
             x,y = eachline.split(',')
@@ -160,14 +170,30 @@ def animate(i):
             x,y = eachline.split(',')
             x2list.append(int(x))
             y2list.append(int(y))
+    for eachline in dataList3:
+        if len(eachline)> 1:
+            x,y = eachline.split(',')
+            x3list.append(int(x))
+            y3list.append(int(y))
+    for eachline in dataList4:
+        if len(eachline)>1:
+            x,y = eachline.split(',')
+            x4list.append(int(x))
+            y4list.append(int(y))
     a.clear()
     b.clear()
-    a.plot(xlist, ylist, marker = 'o', markerfacecolor = 'blue', color = 'red')
-    b.plot(x2list,y2list, marker = 'o', markerfacecolor = 'red', color = 'blue')
+    c.clear()
+    d.clear()
+    a.plot(xlist, ylist, marker = 'x', markerfacecolor = 'red', color = 'red')
+    b.plot(x2list,y2list, marker = 'x', markerfacecolor = 'blue', color = 'blue')
+    c.plot(x3list, y3list, marker = 'x', markerfacecolor = 'green', color = 'green')
+    d.plot(x4list,y4list, marker = 'x', markerfacecolor = 'yellow', color = 'yellow')
 
 ani = animation.FuncAnimation(f,animate)
 open('sampleData.txt', 'w').close()
-open('sampledata2.txt', 'w').close()
+open('sampleData2.txt', 'w').close()
+open('sampleData3.txt', 'w').close()
+open('sampleData4.txt', 'w').close()
 
 def set_label():
     label_16['text'] = house1.supply
@@ -391,11 +417,17 @@ class Dispatcher:
                 print("house" + index + " bank acc = " + bankacc)
             print(self.event_list[i].load_usage)
             pullData1 = open("sampleData.txt","a+")
-            pullData1.write(str(time1)+ "," + str(int(house2.charge)) +"\n")
+            pullData1.write(str(time1)+ "," + str(int(house1.charge)) +"\n")
             pullData1.close()
-            pullData2 = open("sampledata2.txt","a+")
-            pullData2.write(str(time1)+ "," + str(int(house3.charge)) +"\n")
+            pullData2 = open("sampleData2.txt","a+")
+            pullData2.write(str(time1)+ "," + str(int(house2.charge)) +"\n")
             pullData2.close()
+            pullData3 = open("sampleData3.txt","a+")
+            pullData3.write(str(time1)+ "," + str(int(house3.charge)) +"\n")
+            pullData3.close()
+            pullData4 = open("sampleData4.txt","a+")
+            pullData4.write(str(time1)+ "," + str(int(house4.charge)) +"\n")
+            pullData4.close()
             loop_active = True
             while loop_active:
                root2.update()

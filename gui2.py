@@ -5,7 +5,7 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolb
 from matplotlib.figure import Figure
 import matplotlib.animation as animation
 from matplotlib import style
-
+import houses
 
 Largefont = ("Verdana", 12 )
 labelfonthouse = ('times', 50, 'bold')
@@ -16,19 +16,29 @@ style.use("ggplot")
 f = Figure (figsize = (4,4), dpi = 100)
 a = f.add_subplot(121)
 b = f.add_subplot(121)
+c = f.add_subplot(121)
+d = f.add_subplot(121)
 # a.plot([1,2,3,4,5,6,7,8], [10,9,8,7,6,5,4,3])
 canvas = FigureCanvasTkAgg(f)
 canvas.get_tk_widget().grid(row = 20)
 
 def animate(i):
     pullData = open("sampleData.txt","r").read()
-    pulldata = open("sampledata2.txt","r").read()#grab list of data
+    pullData2 = open("sampleData2.txt","r").read()
+    pullData3 = open("sampleData3.txt","r").read()
+    pullData4 = open("sampleData4.txt","r").read()#grab list of data
     dataList = pullData.split('\n')
-    dataList2 = pulldata.split('\n')#separate
+    dataList2 = pullData2.split('\n')
+    dataList3 = pullData3.split('\n')
+    dataList4 = pullData4.split('\n')#separate
     xlist = []
     ylist = []
     x2list = []
     y2list = []
+    x3list = []
+    y3list = []
+    x4list = []
+    y4list = []
     for eachline in dataList:
         if len(eachline)> 1:
             x,y = eachline.split(',')
@@ -39,13 +49,30 @@ def animate(i):
             x,y = eachline.split(',')
             x2list.append(int(x))
             y2list.append(int(y))
+    for eachline in dataList3:
+        if len(eachline)> 1:
+            x,y = eachline.split(',')
+            x3list.append(int(x))
+            y3list.append(int(y))
+    for eachline in dataList4:
+        if len(eachline)>1:
+            x,y = eachline.split(',')
+            x4list.append(int(x))
+            y4list.append(int(y))
     a.clear()
-    a.plot(xlist, ylist, marker = 'o', markerfacecolor = 'blue', color = 'red')
+    a.plot(xlist, ylist, marker = 'x', markerfacecolor = 'red', color = 'red')
     b.clear()
-    b.plot(x2list,y2list, marker = 'o', markerfacecolor = 'red', color = 'blue')
+    b.plot(x2list,y2list, marker = 'x', markerfacecolor = 'blue', color = 'blue')
+    c.clear()
+    c.plot(x3list, y3list, marker = 'x', markerfacecolor = 'green', color = 'green')
+    d.clear()
+    d.plot(x4list,y4list, marker = 'x', markerfacecolor = 'yellow', color = 'yellow')
 
 ani = animation.FuncAnimation(f,animate)
 open('sampleData.txt', 'w').close()
+open('sampleData2.txt', 'w').close()
+open('sampleData3.txt', 'w').close()
+open('sampleData4.txt', 'w').close()
 
 root = Tk()
 root2= Tk()
@@ -151,7 +178,20 @@ label_25.grid(row = 6, column = 4)
 label_26.grid(row = 6, column = 7)
 label_27.grid(row = 6, column = 10)
 
-
+def set_label():
+    label_16['text'] = houses.house1.supply
+    label_17['text'] = houses.house2.supply
+    label_18['text'] = houses.house3.supply
+    label_19['text'] = houses.house4.supply
+    label_20['text'] = str(round(houses.house1.charge,2)) + "%"
+    label_21['text'] = str(round(houses.house2.charge,2)) + "%"
+    label_22['text'] = str(round(houses.house3.charge,2)) + "%"
+    label_23['text'] = str(round(houses.house4.charge,2)) + "%"
+    label_24['text'] = str(round(houses.house1.bankaccount,2)) + "$"
+    label_25['text'] = str(round(houses.house2.bankaccount,2)) + "$"
+    label_26['text'] = str(round(houses.house3.bankaccount,2)) + "$"
+    label_27['text'] = str(round(houses.house4.bankaccount,2)) + "$"
+    root2.after(2000, set_label)
 
 
 
