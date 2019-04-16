@@ -141,6 +141,9 @@ c = f.add_subplot(111)
 d = f.add_subplot(111)
 canvas = FigureCanvasTkAgg(f)
 canvas.get_tk_widget().pack(fill = BOTH, expand = True)
+toolbar = NavigationToolbar2Tk(canvas,root)
+toolbar.update()
+canvas._tkcanvas.pack(side = TOP, fill = BOTH, expand = True)
 
 
 def animate(i):
@@ -308,6 +311,23 @@ class House:
             self.price = (-2/25)*charge+9
         else:
             self.price = (15+10/9) -(2/9)*charge
+    def solar(self,time):
+        if self.number ==1:
+            y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)
+            y = 0.95*y/15210
+            return(y)
+        if self.number ==2:
+            y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)
+            y = 0.9*y/15210
+            return(y)
+        if self.number ==3:
+            y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)
+            y = 0.5*y/15210
+            return(y)
+        if self.number ==4:
+            y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)
+            y = 0.7*y/15210
+            return(y)
 
 def solar(time):
     y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)

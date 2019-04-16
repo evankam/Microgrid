@@ -158,7 +158,8 @@ for i in range (0,len(list_house)):
     del houses[i]
     list_house[i].neighbour = houses
 
-house1.connect_to_main()
-house2.connect_to_solar()
-house3.connect_to_solar()
+# house1.connect_to_main()
+# house1.connect_to_solar()
+
+house4.connect_to_main()
 

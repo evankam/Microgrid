@@ -28,7 +28,7 @@ import otherfunctions
 # house3.connect_to_solar()
 #house4.connect_to_solar()
 
-#hey just a test for github
+
 
 
 
