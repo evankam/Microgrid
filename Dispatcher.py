@@ -3,7 +3,7 @@ import otherfunctions
 import houses
 import gui2
 class Dispatcher:
-
+season = 1
     def _init_(self,list_house):
         self.event_list = []
         self.current_time = 0
@@ -23,7 +23,7 @@ class Dispatcher:
                 list_house[i].charge = 100
         self.current_time = event.time
 
-    def run_dispatcher(self,list_house):
+    def run_dispatcher(self,list_house,season):
         for i in range (0,len(self.event_list)):
             time.sleep(2)
             trueindex = str(i+1)

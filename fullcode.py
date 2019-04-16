@@ -30,7 +30,50 @@ labelfontnumbers = ("times", 20, 'italic')
 style.use("ggplot")
 
 root = Tk()
-root2=Tk()
+root2= Tk()
+
+def doSummer():
+    root.destroy()
+    root2.destroy()
+    season = 1
+    dispatcher1 = Dispatcher()
+    dispatcher1.event_list = []
+    dispatcher1.current_time = 0
+
+    dispatcher1.add_events_from_lists(house1.list_events)
+    dispatcher1.add_events_from_lists(house2.list_events)
+    dispatcher1.add_events_from_lists(house3.list_events)
+    dispatcher1.add_events_from_lists(house4.list_events)
+
+    dispatcher1.run_dispatcher(list_house)
+    print(season)
+
+def doFall():
+    root.quit()
+    root2.quit()
+    season = 2
+
+def doWinter():
+    root.destroy()
+    root2.destroy()
+    season = 3
+def doSpring():
+    root.destroy()
+    root2.destroy()
+    season = 4
+def closeWindow():
+    root.destroy()
+    root2.destroy()
+menu = Menu(root2)
+root2.config(menu=menu)
+subMenu = Menu(menu)
+menu.add_cascade(label="File", menu = subMenu)
+subMenu.add_command(label = "Scenario 1 = Summer", command = doSummer)
+subMenu.add_command(label = "Scenario 2 = Fall", command = doFall)
+subMenu.add_command(label = "Scenario 3 = Winter", command = doWinter)
+subMenu.add_command(label = "Scenario 4 = Spring", command = doSpring)
+subMenu.add_separator()
+subMenu.add_command(label = "Exit", command = closeWindow)
 
 label_0 = Label(root2, text = "House1")
 label_1 = Label(root2, text = "House2")
@@ -311,23 +354,23 @@ class House:
             self.price = (-2/25)*charge+9
         else:
             self.price = (15+10/9) -(2/9)*charge
-    def solar(self,time):
-        if self.number ==1:
-            y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)
-            y = 0.95*y/15210
-            return(y)
-        if self.number ==2:
-            y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)
-            y = 0.9*y/15210
-            return(y)
-        if self.number ==3:
-            y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)
-            y = 0.5*y/15210
-            return(y)
-        if self.number ==4:
-            y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)
-            y = 0.7*y/15210
-            return(y)
+    # def solar(self,time):
+    #     if self.number ==1:
+    #         y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)
+    #         y = 0.95*y/15210
+    #         return(y)
+    #     if self.number ==2:
+    #         y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)
+    #         y = 0.9*y/15210
+    #         return(y)
+    #     if self.number ==3:
+    #         y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)
+    #         y = 0.5*y/15210
+    #         return(y)
+    #     if self.number ==4:
+    #         y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)
+    #         y = 0.7*y/15210
+    #         return(y)
 
 def solar(time):
     y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)

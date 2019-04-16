@@ -26,12 +26,12 @@ import otherfunctions
 # house1.connect_to_solar()
 # house2.connect_to_solar()
 # house3.connect_to_solar()
-#house4.connect_to_solar()
+# house4.connect_to_solar()
 
 
 
 
-
+season = 1
 
 dispatcher1 = Dispatcher.Dispatcher()
 dispatcher1.event_list = []
@@ -42,7 +42,7 @@ dispatcher1.add_events_from_lists(houses.house2.list_events)
 dispatcher1.add_events_from_lists(houses.house3.list_events)
 dispatcher1.add_events_from_lists(houses.house4.list_events)
 
-dispatcher1.run_dispatcher(houses.list_house)
+dispatcher1.run_dispatcher(houses.list_house,season)
 
 
 

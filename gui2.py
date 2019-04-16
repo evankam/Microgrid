@@ -77,6 +77,36 @@ open('sampleData4.txt', 'w').close()
 root = Tk()
 root2= Tk()
 
+def doSummer():
+    root.destroy()
+    root2.destroy()
+    season = 1
+def doFall():
+    root.destroy()
+    root2.destroy()
+    season = 2
+def doWinter():
+    root.destroy()
+    root2.destroy()
+    season = 3
+def doSpring():
+    root.destroy()
+    root2.destroy()
+    season = 4
+def closeWindow():
+    root.destroy()
+    root2.destroy()
+menu = Menu(root2)
+root2.config(menu=menu)
+subMenu = Menu(menu)
+menu.add_cascade(label="File", menu = subMenu)
+subMenu.add_command(label = "Scenario 1 = Summer", command = doSummer)
+subMenu.add_command(label = "Scenario 2 = Fall", command = doFall)
+subMenu.add_command(label = "Scenario 3 = Winter", command = doWinter)
+subMenu.add_command(label = "Scenario 4 = Spring", command = doSpring)
+subMenu.add_separator()
+subMenu.add_command(label = "Exit", command = closeWindow)
+
 label_0 = Label(root2, text = "House1")
 label_1 = Label(root2, text = "House2")
 label_2 = Label(root2, text = "House3")
