@@ -2,10 +2,9 @@ from pyfirmata import Arduino,util
 import time
 import random
 from decimal import Decimal
-# board = Arduino('COM5')
-# board_bis = Arduino('COM8')
+board = Arduino('COM4')
+board_bis = Arduino('COM3')
 
-# board = Arduino('COM4')
 
 from tkinter import *
 import matplotlib
@@ -32,48 +31,36 @@ style.use("ggplot")
 root = Tk()
 root2= Tk()
 
-def doSummer():
-    root.destroy()
-    root2.destroy()
-    season = 1
-    dispatcher1 = Dispatcher()
-    dispatcher1.event_list = []
-    dispatcher1.current_time = 0
-
-    dispatcher1.add_events_from_lists(house1.list_events)
-    dispatcher1.add_events_from_lists(house2.list_events)
-    dispatcher1.add_events_from_lists(house3.list_events)
-    dispatcher1.add_events_from_lists(house4.list_events)
-
-    dispatcher1.run_dispatcher(list_house)
-    print(season)
-
-def doFall():
-    root.quit()
-    root2.quit()
-    season = 2
-
-def doWinter():
-    root.destroy()
-    root2.destroy()
-    season = 3
-def doSpring():
-    root.destroy()
-    root2.destroy()
-    season = 4
-def closeWindow():
-    root.destroy()
-    root2.destroy()
-menu = Menu(root2)
-root2.config(menu=menu)
-subMenu = Menu(menu)
-menu.add_cascade(label="File", menu = subMenu)
-subMenu.add_command(label = "Scenario 1 = Summer", command = doSummer)
-subMenu.add_command(label = "Scenario 2 = Fall", command = doFall)
-subMenu.add_command(label = "Scenario 3 = Winter", command = doWinter)
-subMenu.add_command(label = "Scenario 4 = Spring", command = doSpring)
-subMenu.add_separator()
-subMenu.add_command(label = "Exit", command = closeWindow)
+# def doSummer():
+#     root.destroy()
+#     root2.destroy()
+#
+# def doFall():
+#     root.quit()
+#     root2.quit()
+#
+#
+# def doWinter():
+#     root.destroy()
+#     root2.destroy()
+#
+# def doSpring():
+#     root.destroy()
+#     root2.destroy()
+#
+# def closeWindow():
+#     root.destroy()
+#     root2.destroy()
+# menu = Menu(root2)
+# root2.config(menu=menu)
+# subMenu = Menu(menu)
+# menu.add_cascade(label="File", menu = subMenu)
+# subMenu.add_command(label = "Scenario 1 = Summer", command = doSummer)
+# subMenu.add_command(label = "Scenario 2 = Fall", command = doFall)
+# subMenu.add_command(label = "Scenario 3 = Winter", command = doWinter)
+# subMenu.add_command(label = "Scenario 4 = Spring", command = doSpring)
+# subMenu.add_separator()
+# subMenu.add_command(label = "Exit", command = closeWindow)
 
 label_0 = Label(root2, text = "House1")
 label_1 = Label(root2, text = "House2")
@@ -184,9 +171,7 @@ c = f.add_subplot(111)
 d = f.add_subplot(111)
 canvas = FigureCanvasTkAgg(f)
 canvas.get_tk_widget().pack(fill = BOTH, expand = True)
-toolbar = NavigationToolbar2Tk(canvas,root)
-toolbar.update()
-canvas._tkcanvas.pack(side = TOP, fill = BOTH, expand = True)
+
 
 
 def animate(i):
