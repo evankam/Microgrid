@@ -4,7 +4,7 @@ import random
 from tkinter import *
 from decimal import Decimal
 import houses
-# import gui2
+import gui2
 import events
 import Dispatcher
 import otherfunctions

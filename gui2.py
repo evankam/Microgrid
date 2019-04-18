@@ -6,7 +6,7 @@ from matplotlib.figure import Figure
 import matplotlib.animation as animation
 from matplotlib import style
 import  houses
-# import master
+
 
 Largefont = ("Verdana", 12 )
 labelfonthouse = ('times', 50, 'bold')
@@ -210,7 +210,7 @@ menu = Menu(root2)
 root2.config(menu=menu)
 subMenu = Menu(menu)
 menu.add_cascade(label="File", menu = subMenu)
-subMenu.add_command(label = "Scenario 1 = Summer", command = master.doSummer)
+subMenu.add_command(label = "Scenario 1 = Summer", command = doSummer)
 subMenu.add_command(label = "Scenario 2 = Fall", command = doFall)
 subMenu.add_command(label = "Scenario 3 = Winter", command = doWinter)
 subMenu.add_command(label = "Scenario 4 = Spring", command = doSpring)
