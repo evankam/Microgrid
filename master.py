@@ -9,7 +9,6 @@ import events
 import Dispatcher
 import otherfunctions
 
-
 season = 1
 
 dispatcher1 = Dispatcher.Dispatcher()
