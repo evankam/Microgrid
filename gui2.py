@@ -14,8 +14,14 @@ labelfontattributes = ('times', 20)
 labelfontnumbers = ("times", 20, 'italic')
 style.use("ggplot")
 
+
 root = Tk()
+root.geometry("600x600+0+0")
+
 root2= Tk()
+root2.geometry("1280x230+0+0")
+
+
 
 label_0 = Label(root2, text = "House1")
 label_1 = Label(root2, text = "House2")
@@ -120,7 +126,7 @@ label_27.grid(row = 6, column = 10)
 
 
 
-f = Figure (figsize = (4,4), dpi = 100)
+f = Figure (figsize = (5.5,5.5), dpi = 100)
 a = f.add_subplot(111)
 b = f.add_subplot(111)
 c = f.add_subplot(111)
@@ -169,10 +175,13 @@ def animate(i):
     b.clear()
     c.clear()
     d.clear()
-    a.plot(xlist, ylist, marker = 'x', markerfacecolor = 'red', color = 'red')
-    b.plot(x2list,y2list, marker = 'x', markerfacecolor = 'blue', color = 'blue')
-    c.plot(x3list, y3list, marker = 'x', markerfacecolor = 'green', color = 'green')
-    d.plot(x4list,y4list, marker = 'x', markerfacecolor = 'yellow', color = 'yellow')
+    a.plot(xlist, ylist, marker = 'x', markerfacecolor = 'red', color = 'red', label = "house1")
+    b.plot(x2list,y2list, marker = 'x', markerfacecolor = 'blue', color = 'blue', label  = "house2")
+    c.plot(x3list, y3list, marker = 'x', markerfacecolor = 'green', color = 'green', label = "house3")
+    d.plot(x4list,y4list, marker = 'x', markerfacecolor = 'yellow', color = 'yellow', label  = "house4")
+    a.legend(bbox_to_anchor=(0, 1.02, 1, .102), loc=4,ncol=4, borderaxespad=0)
+    a.set_xlabel('Time')
+    a.set_ylabel('Solar Charges (%)')
 
 ani = animation.FuncAnimation(f,animate)
 open('sampleData.txt', 'w').close()
@@ -232,5 +241,5 @@ def set_label():
     label_25['text'] = str(round(houses.house2.bankaccount,2)) + "$"
     label_26['text'] = str(round(houses.house3.bankaccount,2)) + "$"
     label_27['text'] = str(round(houses.house4.bankaccount,2)) + "$"
-    root2.after(2000, set_label)
+    root2.after(1000, set_label)
 

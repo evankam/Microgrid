@@ -40,7 +40,7 @@ class Dispatcher:
         houses.house4.connect_to_solar()
         for i in range (0,len(self.event_list)):
 
-            time.sleep(2)
+            time.sleep(1)
             if i>0 and house_event.supply == 'exchange' and list_house_seller[0].supply == 'exchange':
                 house_event.connect_to_solar()
                 list_house_seller[0].connect_to_solar()
