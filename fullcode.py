@@ -2,8 +2,8 @@ from pyfirmata import Arduino,util
 import time
 import random
 from decimal import Decimal
-board = Arduino('COM4')
-board_bis = Arduino('COM3')
+# board = Arduino('COM4')
+# board_bis = Arduino('COM3')
 
 
 from tkinter import *
@@ -23,7 +23,10 @@ labelfontnumbers = ("times", 20, 'italic')
 style.use("ggplot")
 
 root = Tk()
+root.geometry("600x600+0+0")
+
 root2= Tk()
+root2.geometry("1280x230+0+0")
 
 # def doSummer():
 #     root.destroy()
@@ -158,7 +161,7 @@ label_26.grid(row = 6, column = 7)
 label_27.grid(row = 6, column = 10)
 
 
-f = Figure (figsize = (5,5), dpi = 100)
+f = Figure (figsize = (5.5,5.5), dpi = 100)
 a = f.add_subplot(111)
 b = f.add_subplot(111)
 c = f.add_subplot(111)
@@ -209,10 +212,13 @@ def animate(i):
     b.clear()
     c.clear()
     d.clear()
-    a.plot(xlist, ylist, marker = 'x', markerfacecolor = 'red', color = 'red')
-    b.plot(x2list,y2list, marker = 'x', markerfacecolor = 'blue', color = 'blue')
-    c.plot(x3list, y3list, marker = 'x', markerfacecolor = 'green', color = 'green')
-    d.plot(x4list,y4list, marker = 'x', markerfacecolor = 'yellow', color = 'yellow')
+    a.plot(xlist, ylist, marker = 'x', markerfacecolor = 'red', color = 'red', label = "house1")
+    b.plot(x2list,y2list, marker = 'x', markerfacecolor = 'blue', color = 'blue', label  = "house2")
+    c.plot(x3list, y3list, marker = 'x', markerfacecolor = 'green', color = 'green', label = "house3")
+    d.plot(x4list,y4list, marker = 'x', markerfacecolor = 'yellow', color = 'yellow', label  = "house4")
+    a.legend(bbox_to_anchor=(0, 1.02, 1, .102), loc=4,ncol=4, borderaxespad=0)
+    a.set_xlabel('Time')
+    a.set_ylabel('Solar Charges (%)')
 
 ani = animation.FuncAnimation(f,animate)
 open('sampleData.txt', 'w').close()
@@ -390,10 +396,10 @@ class Dispatcher:
         self.current_time = event.time
 
     def run_dispatcher(self,list_house):
-        house1.connect_to_solar()
-        house2.connect_to_solar()
-        house3.connect_to_solar()
-        house4.connect_to_solar()
+        # house1.connect_to_solar()
+        # house2.connect_to_solar()
+        # house3.connect_to_solar()
+        # house4.connect_to_solar()
         for i in range (0,len(self.event_list)):
             time.sleep(2)
             trueindex = str(i+1)
@@ -419,7 +425,7 @@ class Dispatcher:
                 if len(list_house_seller) ==0:
                     if house_event.bankaccount> main_generator_price*self.event_list[i].load_usage:
                         house_event.bankaccount += - main_generator_price*self.event_list[i].load_usage#we use the main if its cheaper
-                        house_event.connect_to_main()
+                        # house_event.connect_to_main()
                         print(houseevent + " use main_generator 1")
                         house_event.supply = "main generator"
                     else:
@@ -431,7 +437,7 @@ class Dispatcher:
                     if list_house_seller[0].price > main_generator_price:
                         if house_event.bankaccount> main_generator_price*self.event_list[i].load_usage:
                             house_event.bankaccount += - main_generator_price*self.event_list[i].load_usage    #we use the main if its cheaper
-                            house_event.connect_to_main()
+                            # house_event.connect_to_main()
                             print(houseevent + " use main_generator 2")
                             house_event.supply = "main generator"
                         else:
@@ -443,8 +449,8 @@ class Dispatcher:
                             list_house_seller[0].bankaccount += list_house_seller[0].price*self.event_list[i].load_usage
 
                             list_house_seller[0].charge += - self.event_list[i].load_usage
-                            house_event.connect_to_other_house()
-                            list_house_seller[0].connect_to_other_house()
+                            # house_event.connect_to_other_house()
+                            # list_house_seller[0].connect_to_other_house()
                             sellerhouse = str(list_house_seller[0])
                             print(houseevent + " buy from " + sellerhouse)
                             house_event.supply = "buying"
