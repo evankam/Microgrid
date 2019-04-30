@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12729c28-4114-4336-a3ef-a509c84d96b6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/gui2.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/master.py" beforeDir="false" afterPath="$PROJECT_DIR$/master.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sampleData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sampleData.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sampleData3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sampleData3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sampleData4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sampleData4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sampledata2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sampledata2.txt" afterDir="false" />
-    </list>
+    <list default="true" id="12729c28-4114-4336-a3ef-a509c84d96b6" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +26,7 @@
         <entry file="file://$PROJECT_DIR$/gui2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="202">
-              <caret line="210" column="63" lean-forward="true" selection-start-line="210" selection-start-column="63" selection-end-line="210" selection-end-column="63" />
+              <caret line="210" column="63" selection-start-line="210" selection-start-column="63" selection-end-line="210" selection-end-column="63" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -144,7 +137,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1358" />
     <option name="width" value="1390" />
     <option name="height" value="1756" />
@@ -314,7 +307,7 @@
     <configuration />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1381" height="885" extended-state="7" />
+    <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.133829" />
@@ -491,7 +484,7 @@
     <entry file="file://$PROJECT_DIR$/gui2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
-          <caret line="210" column="63" lean-forward="true" selection-start-line="210" selection-start-column="63" selection-end-line="210" selection-end-column="63" />
+          <caret line="210" column="63" selection-start-line="210" selection-start-column="63" selection-end-line="210" selection-end-column="63" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>

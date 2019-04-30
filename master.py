@@ -111,6 +111,8 @@ def closeWindow():
     gui2.root.destroy()
     gui2.root2.destroy()
 
+gui2.label_29['text'] = S
+
 if S == "Summer":
     season = 1
 if S == "Fall":
