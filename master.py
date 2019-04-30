@@ -23,7 +23,7 @@ w = Label(root3, text="Test")
 w.pack()
 messagebox.showinfo("Welcome to the Microgrid Program", "Please click the OK button")
 
-S = simpledialog.askstring("season", "What's the season would you like to see in the demo? (Summer, Fall, Winter, Spring)")
+S = simpledialog.askstring("Choose a Season", "What's the season would you like to see in the demo? (Summer, Fall, Winter, Spring)")
 
 output = "Your season is, {}".format(S)
 root3.destroy()
