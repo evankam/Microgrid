@@ -33,7 +33,16 @@ def doSummer():
     messagebox.showinfo("Warning!", "Are you sure you want to change to Summer?")
     S = simpledialog.askstring("Please answer one of the following", "Yes/No")
     if S == "Yes":
+
         gui2.label_29['text'] = "Summer"
+        open('sampleData.txt', 'w').close()
+        open('sampleData2.txt', 'w').close()
+        open('sampleData3.txt', 'w').close()
+        open('sampleData4.txt', 'w').close()
+        gui2.a.cla()
+        gui2.b.cla()
+        gui2.c.cla()
+        gui2.d.cla()
         season =1
         dispatcher1 = Dispatcher.Dispatcher()
         dispatcher1.event_list = []
@@ -54,6 +63,14 @@ def doFall():
     S = simpledialog.askstring("Please answer one of the following", "Yes/No")
     if S == "Yes":
         gui2.label_29['text'] = "Fall"
+        open('sampleData.txt', 'w').close()
+        open('sampleData2.txt', 'w').close()
+        open('sampleData3.txt', 'w').close()
+        open('sampleData4.txt', 'w').close()
+        gui2.a.cla()
+        gui2.b.cla()
+        gui2.c.cla()
+        gui2.d.cla()
         season =2
         dispatcher1 = Dispatcher.Dispatcher()
         dispatcher1.event_list = []
@@ -74,6 +91,14 @@ def doWinter():
     S = simpledialog.askstring("Please answer one of the following", "Yes/No")
     if S == "Yes":
         gui2.label_29['text'] = "Winter"
+        open('sampleData.txt', 'w').close()
+        open('sampleData2.txt', 'w').close()
+        open('sampleData3.txt', 'w').close()
+        open('sampleData4.txt', 'w').close()
+        gui2.a.cla()
+        gui2.b.cla()
+        gui2.c.cla()
+        gui2.d.cla()
         season =3
         dispatcher1 = Dispatcher.Dispatcher()
         dispatcher1.event_list = []
@@ -93,6 +118,14 @@ def doSpring():
     S = simpledialog.askstring("Please answer one of the following", "Yes/No")
     if S == "Yes":
         gui2.label_29['text'] = "Spring"
+        open('sampleData.txt', 'w').close()
+        open('sampleData2.txt', 'w').close()
+        open('sampleData3.txt', 'w').close()
+        open('sampleData4.txt', 'w').close()
+        gui2.a.cla()
+        gui2.b.cla()
+        gui2.c.cla()
+        gui2.d.cla()
         season =4
         dispatcher1 = Dispatcher.Dispatcher()
         dispatcher1.event_list = []
@@ -107,6 +140,7 @@ def doSpring():
     else:
         gui2.root.destroy()
         gui2.root2.destroy()
+        
 def closeWindow():
     gui2.root.destroy()
     gui2.root2.destroy()

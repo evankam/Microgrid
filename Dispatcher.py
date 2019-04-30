@@ -88,6 +88,8 @@ class Dispatcher:
 
                         else:
                             print('no money')
+            print("event" + str(i))
+            print(str(season)+"...." + str(i))
             pullData1 = open("sampleData.txt","a+")
             pullData1.write(str(time1)+ "," + str(int(houses.house1.charge)) +"\n")
             pullData1.close()
