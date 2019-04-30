@@ -23,6 +23,7 @@ root2.geometry("1280x230+0+0")
 
 
 
+
 label_0 = Label(root2, text = "House1")
 label_1 = Label(root2, text = "House2")
 label_2 = Label(root2, text = "House3")
@@ -58,6 +59,9 @@ label_25 = Label(root2, text = "Initializing")
 label_26 = Label(root2, text = "Initializing")
 label_27 = Label(root2, text = "Initializing")
 
+label_28 = Label(root2, text = "Season:")
+label_29 = Label(root2, text = S)
+
 label_0.config(font=labelfonthouse)
 label_1.config(font=labelfonthouse)
 label_2.config(font=labelfonthouse)
@@ -88,6 +92,9 @@ label_24.config(font=labelfontnumbers)
 label_25.config(font=labelfontnumbers)
 label_26.config(font=labelfontnumbers)
 label_27.config(font=labelfontnumbers)
+
+label_28.config(font=labelfontattributes)
+label_29.config(font=labelfontattributes)
 
 label_0.grid(row= 0, column = 0, columnspan = 3)
 label_1.grid(row = 0, column = 3, columnspan = 3)
@@ -124,7 +131,8 @@ label_25.grid(row = 6, column = 4)
 label_26.grid(row = 6, column = 7)
 label_27.grid(row = 6, column = 10)
 
-
+label_28.grid(row = 8, column =0)
+label_29.grid(row = 8, column =1)
 
 f = Figure (figsize = (5.5,5.5), dpi = 100)
 a = f.add_subplot(111)

@@ -1,3 +1,5 @@
+from tkinter import messagebox, simpledialog
+
 from pyfirmata import Arduino,util
 import time
 import random
@@ -8,7 +10,11 @@ from decimal import Decimal
 
 from tkinter import *
 import matplotlib
+
+
 matplotlib.use("TkAgg")
+import tkinter.simpledialog
+import tkinter.messagebox
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from matplotlib.figure import Figure
 import matplotlib.animation as animation
@@ -28,36 +34,108 @@ root.geometry("600x600+0+0")
 root2= Tk()
 root2.geometry("1280x230+0+0")
 
-# def doSummer():
-#     root.destroy()
-#     root2.destroy()
-#
-# def doFall():
-#     root.quit()
-#     root2.quit()
-#
-#
-# def doWinter():
-#     root.destroy()
-#     root2.destroy()
-#
-# def doSpring():
-#     root.destroy()
-#     root2.destroy()
-#
-# def closeWindow():
-#     root.destroy()
-#     root2.destroy()
-# menu = Menu(root2)
-# root2.config(menu=menu)
-# subMenu = Menu(menu)
-# menu.add_cascade(label="File", menu = subMenu)
-# subMenu.add_command(label = "Scenario 1 = Summer", command = doSummer)
-# subMenu.add_command(label = "Scenario 2 = Fall", command = doFall)
-# subMenu.add_command(label = "Scenario 3 = Winter", command = doWinter)
-# subMenu.add_command(label = "Scenario 4 = Spring", command = doSpring)
-# subMenu.add_separator()
-# subMenu.add_command(label = "Exit", command = closeWindow)
+root3= Tk()
+w = Label(root3, text="Test")
+w.pack()
+messagebox.showinfo("Welcome to the Microgrid Program", "Please click the OK button")
+
+S = simpledialog.askstring("season", "What's the season would you like to see in the demo? (Summer, Fall, Winter, Spring)")
+
+output = "Your season is, {}".format(S)
+root3.destroy()
+
+
+def doSummer():
+    messagebox.showinfo("Warning!", "Are you sure you want to change to Summer?")
+    S = simpledialog.askstring("Please answer one of the following", "Yes/No")
+    if S == "Yes":
+        label_29['text'] = "Summer"
+        season =1
+        dispatcher1 = Dispatcher()
+        dispatcher1.event_list = []
+        dispatcher1.current_time = 0
+
+        dispatcher1.add_events_from_lists(house1.list_events)
+        dispatcher1.add_events_from_lists(house2.list_events)
+        dispatcher1.add_events_from_lists(house3.list_events)
+        dispatcher1.add_events_from_lists(house4.list_events)
+
+        dispatcher1.run_dispatcher(list_house,season)
+    else:
+        root.destroy()
+        root2.destroy()
+
+def doFall():
+    messagebox.showinfo("Warning!", "Are you sure you want to change to Fall?")
+    S = simpledialog.askstring("Please answer one of the following", "Yes/No")
+    if S == "Yes":
+        label_29['text'] = "Fall"
+        season =2
+        dispatcher1 = Dispatcher()
+        dispatcher1.event_list = []
+        dispatcher1.current_time = 0
+
+        dispatcher1.add_events_from_lists(house1.list_events)
+        dispatcher1.add_events_from_lists(house2.list_events)
+        dispatcher1.add_events_from_lists(house3.list_events)
+        dispatcher1.add_events_from_lists(house4.list_events)
+
+        dispatcher1.run_dispatcher(list_house,season)
+    else:
+        root.destroy()
+        root2.destroy()
+
+def doWinter():
+    messagebox.showinfo("Warning!", "Are you sure you want to change to Winter?")
+    S = simpledialog.askstring("Please answer one of the following", "Yes/No")
+    if S == "Yes":
+        label_29['text'] = "Winter"
+        season =3
+        dispatcher1 = Dispatcher()
+        dispatcher1.event_list = []
+        dispatcher1.current_time = 0
+
+        dispatcher1.add_events_from_lists(house1.list_events)
+        dispatcher1.add_events_from_lists(house2.list_events)
+        dispatcher1.add_events_from_lists(house3.list_events)
+        dispatcher1.add_events_from_lists(house4.list_events)
+
+        dispatcher1.run_dispatcher(list_house,season)
+    else:
+        root.destroy()
+        root2.destroy()
+def doSpring():
+    messagebox.showinfo("Warning!", "Are you sure you want to change to Spring?")
+    S = simpledialog.askstring("Please answer one of the following", "Yes/No")
+    if S == "Yes":
+        label_29['text'] = "Spring"
+        season =4
+        dispatcher1 = Dispatcher()
+        dispatcher1.event_list = []
+        dispatcher1.current_time = 0
+
+        dispatcher1.add_events_from_lists(house1.list_events)
+        dispatcher1.add_events_from_lists(house2.list_events)
+        dispatcher1.add_events_from_lists(house3.list_events)
+        dispatcher1.add_events_from_lists(house4.list_events)
+
+        dispatcher1.run_dispatcher(list_house,season)
+    else:
+        root.destroy()
+        root2.destroy()
+def closeWindow():
+    root.destroy()
+    root2.destroy()
+menu = Menu(root2)
+root2.config(menu=menu)
+subMenu = Menu(menu)
+menu.add_cascade(label="File", menu = subMenu)
+subMenu.add_command(label = "Scenario 1 = Summer", command = doSummer)
+subMenu.add_command(label = "Scenario 2 = Fall", command = doFall)
+subMenu.add_command(label = "Scenario 3 = Winter", command = doWinter)
+subMenu.add_command(label = "Scenario 4 = Spring", command = doSpring)
+subMenu.add_separator()
+subMenu.add_command(label = "Exit", command = closeWindow)
 
 label_0 = Label(root2, text = "House1")
 label_1 = Label(root2, text = "House2")
@@ -94,6 +172,9 @@ label_25 = Label(root2, text = "Initializing")
 label_26 = Label(root2, text = "Initializing")
 label_27 = Label(root2, text = "Initializing")
 
+label_28 = Label(root2, text = "Season:")
+label_29 = Label(root2, text = S)
+
 label_0.config(font=labelfonthouse)
 label_1.config(font=labelfonthouse)
 label_2.config(font=labelfonthouse)
@@ -124,6 +205,9 @@ label_24.config(font=labelfontnumbers)
 label_25.config(font=labelfontnumbers)
 label_26.config(font=labelfontnumbers)
 label_27.config(font=labelfontnumbers)
+
+label_28.config(font=labelfontattributes)
+label_29.config(font=labelfontattributes)
 
 label_0.grid(row= 0, column = 0, columnspan = 3)
 label_1.grid(row = 0, column = 3, columnspan = 3)
@@ -160,6 +244,8 @@ label_25.grid(row = 6, column = 4)
 label_26.grid(row = 6, column = 7)
 label_27.grid(row = 6, column = 10)
 
+label_28.grid(row = 8, column =0)
+label_29.grid(row = 8, column =1)
 
 f = Figure (figsize = (5.5,5.5), dpi = 100)
 a = f.add_subplot(111)
@@ -242,7 +328,15 @@ def set_label():
     root2.after(2000, set_label)
 
 
-
+if S == "Summer":
+    season = 1
+if S == "Fall":
+    season = 2
+if S == "Winter":
+    season = 3
+if S == "Spring":
+    season = 4
+print(season)
 
 
 
@@ -263,8 +357,8 @@ class House:
     def connect_to_solar(self):
             first_relay_to_change = self.firstrelay+1
             second_relay_to_change = self.secondrelay+1
-            board.digital[first_relay_to_change].write(0)   #turns the first relay on
-            board.digital[second_relay_to_change].write(0)  #turns the second relay on
+            # board.digital[first_relay_to_change].write(0)   #turns the first relay on
+            # board.digital[second_relay_to_change].write(0)  #turns the second relay on
             self.supply = 'own battery'
             if self.number ==1:
                 board_bis.digital[2].write(0)
@@ -287,8 +381,8 @@ class House:
     def connect_to_main(self):
             first_relay_to_change = self.firstrelay+1
             second_relay_to_change = self.secondrelay+1
-            board.digital[first_relay_to_change].write(1)   #turns the first relay off
-            board.digital[second_relay_to_change].write(0)  #turns the second relay on
+            # board.digital[first_relay_to_change].write(1)   #turns the first relay off
+            # board.digital[second_relay_to_change].write(0)  #turns the second relay on
             self.supply = 'main generator'
             if self.number ==1:
                 board_bis.digital[2].write(0)
@@ -310,8 +404,8 @@ class House:
     def connect_to_other_house(self):
             first_relay_to_change = self.firstrelay+1
             second_relay_to_change = self.secondrelay+1
-            board.digital[first_relay_to_change].write(0)   #turns the first relay on
-            board.digital[second_relay_to_change].write(1)  #turns the second relay off
+            # board.digital[first_relay_to_change].write(0)   #turns the first relay on
+            # board.digital[second_relay_to_change].write(1)  #turns the second relay off
             self.supply = 'exchange'
             if self.number ==1:
                 board_bis.digital[2].write(1)
@@ -357,10 +451,27 @@ class House:
     #         y = 0.7*y/15210
     #         return(y)
 
-def solar(time):
-    y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)
-    y = y/15210
-    return(y)
+# def solar(time):
+#     y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)
+#     y = y/15210
+#     return(y)
+def solar(time,season):
+    if season ==1:
+        y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)
+        y = y/15210
+        return(y)
+    if season ==2:
+        y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)
+        y = (2/3)*y/15210
+        return(y)
+    if season ==3:
+        y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)
+        y = 0.5*y/15210
+        return(y)
+    if season ==4:
+        y = (-1/144)*(time**3)*(1/3)+ (65/12)*(time**2)*(0.5)
+        y = (2/3)*y/15210
+        return(y)
 
 main_generator_price = 3
 
@@ -387,15 +498,15 @@ class Dispatcher:
         self.event_list.sort(key=lambda x: x.time, reverse=False)
 
 
-    def solar_event(self,event, list_house):
+    def solar_event(self,event, list_house,season):
         current_time = self.current_time
         for i in range (0,len(list_house)):
-            list_house[i].charge += solar(event.time) - solar(self.current_time)
+            list_house[i].charge += solar(event.time,season) - solar(self.current_time,season)
             if list_house[i].charge > 100:
                 list_house[i].charge = 100
         self.current_time = event.time
 
-    def run_dispatcher(self,list_house):
+    def run_dispatcher(self,list_house,season):
         # house1.connect_to_solar()
         # house2.connect_to_solar()
         # house3.connect_to_solar()
@@ -404,7 +515,7 @@ class Dispatcher:
             time.sleep(2)
             trueindex = str(i+1)
             print("event" + trueindex)
-            self.solar_event(self.event_list[i], list_house)
+            self.solar_event(self.event_list[i], list_house,season)
             house_event = self.event_list[i].house
             houseevent= str(house_event)
             list_houses = house_event.neighbour
@@ -709,4 +820,4 @@ dispatcher1.add_events_from_lists(house2.list_events)
 dispatcher1.add_events_from_lists(house3.list_events)
 dispatcher1.add_events_from_lists(house4.list_events)
 
-dispatcher1.run_dispatcher(list_house)
+dispatcher1.run_dispatcher(list_house,season)
