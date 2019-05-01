@@ -18,129 +18,119 @@ matplotlib.use("TkAgg")
 import tkinter.simpledialog
 import tkinter.messagebox
 
-root3= Tk()
-w = Label(root3, text="Test")
-w.pack()
-messagebox.showinfo("Welcome to the Microgrid Program", "Please click the OK button")
-
-S = simpledialog.askstring("Choose a Season", "What's the season would you like to see in the demo? (Summer, Fall, Winter, Spring)")
-
-output = "Your season is, {}".format(S)
-root3.destroy()
-
+# root3= Tk()
+# w = Label(root3, text="Test")
+# w.pack()
+# messagebox.showinfo("Welcome to the Microgrid Program", "Please click the OK button")
+#
+# S = simpledialog.askstring("Choose a Season", "What's the season would you like to see in the demo? (Summer, Fall, Winter, Spring)")
+#
+# output = "Your season is, {}".format(S)
+# root3.destroy()
+S = "Summer"
 
 def doSummer():
-    messagebox.showinfo("Warning!", "Are you sure you want to change to Summer?")
-    S = simpledialog.askstring("Please answer one of the following", "Yes/No")
-    if S == "Yes":
+    messagebox.showinfo("Warning!", "Changing Season to Summer")
 
-        gui2.label_29['text'] = "Summer"
-        open('sampleData.txt', 'w').close()
-        open('sampleData2.txt', 'w').close()
-        open('sampleData3.txt', 'w').close()
-        open('sampleData4.txt', 'w').close()
-        gui2.a.cla()
-        gui2.b.cla()
-        gui2.c.cla()
-        gui2.d.cla()
-        season =1
-        dispatcher1 = Dispatcher.Dispatcher()
-        dispatcher1.event_list = []
-        dispatcher1.current_time = 0
+    gui2.label_29['text'] = "Summer"
+    open('sampleData.txt', 'w').close()
+    open('sampleData2.txt', 'w').close()
+    open('sampleData3.txt', 'w').close()
+    open('sampleData4.txt', 'w').close()
+    gui2.a.cla()
+    gui2.b.cla()
+    gui2.c.cla()
+    gui2.d.cla()
+    season =1
+    dispatcher1 = Dispatcher.Dispatcher()
+    dispatcher1.event_list = []
+    dispatcher1.current_time = 0
 
-        dispatcher1.add_events_from_lists(houses.house1.list_events)
-        dispatcher1.add_events_from_lists(houses.house2.list_events)
-        dispatcher1.add_events_from_lists(houses.house3.list_events)
-        dispatcher1.add_events_from_lists(houses.house4.list_events)
+    dispatcher1.add_events_from_lists(houses.house1.list_events)
+    dispatcher1.add_events_from_lists(houses.house2.list_events)
+    dispatcher1.add_events_from_lists(houses.house3.list_events)
+    dispatcher1.add_events_from_lists(houses.house4.list_events)
 
-        dispatcher1.run_dispatcher(houses.list_house,season)
-    else:
-        gui2.root.destroy()
-        gui2.root2.destroy()
+    dispatcher1.run_dispatcher(houses.list_house,season)
 
 def doFall():
-    messagebox.showinfo("Warning!", "Are you sure you want to change to Fall?")
-    S = simpledialog.askstring("Please answer one of the following", "Yes/No")
-    if S == "Yes":
-        gui2.label_29['text'] = "Fall"
-        open('sampleData.txt', 'w').close()
-        open('sampleData2.txt', 'w').close()
-        open('sampleData3.txt', 'w').close()
-        open('sampleData4.txt', 'w').close()
-        gui2.a.cla()
-        gui2.b.cla()
-        gui2.c.cla()
-        gui2.d.cla()
-        season =2
-        dispatcher1 = Dispatcher.Dispatcher()
-        dispatcher1.event_list = []
-        dispatcher1.current_time = 0
+    messagebox.showinfo("Warning!", "Changing Season to Fall")
 
-        dispatcher1.add_events_from_lists(houses.house1.list_events)
-        dispatcher1.add_events_from_lists(houses.house2.list_events)
-        dispatcher1.add_events_from_lists(houses.house3.list_events)
-        dispatcher1.add_events_from_lists(houses.house4.list_events)
+    gui2.label_29['text'] = "Fall"
+    open('sampleData.txt', 'w').close()
+    open('sampleData2.txt', 'w').close()
+    open('sampleData3.txt', 'w').close()
+    open('sampleData4.txt', 'w').close()
+    gui2.a.cla()
+    gui2.b.cla()
+    gui2.c.cla()
+    gui2.d.cla()
+    season = 2
+    dispatcher1 = Dispatcher.Dispatcher()
+    dispatcher1.event_list = []
+    dispatcher1.current_time = 0
 
-        dispatcher1.run_dispatcher(houses.list_house,season)
-    else:
-        gui2.root.destroy()
-        gui2.root2.destroy()
+    dispatcher1.add_events_from_lists(houses.house1.list_events)
+    dispatcher1.add_events_from_lists(houses.house2.list_events)
+    dispatcher1.add_events_from_lists(houses.house3.list_events)
+    dispatcher1.add_events_from_lists(houses.house4.list_events)
+
+    dispatcher1.run_dispatcher(houses.list_house,season)
+
+
 
 def doWinter():
-    messagebox.showinfo("Warning!", "Are you sure you want to change to Winter?")
-    S = simpledialog.askstring("Please answer one of the following", "Yes/No")
-    if S == "Yes":
-        gui2.label_29['text'] = "Winter"
-        open('sampleData.txt', 'w').close()
-        open('sampleData2.txt', 'w').close()
-        open('sampleData3.txt', 'w').close()
-        open('sampleData4.txt', 'w').close()
-        gui2.a.cla()
-        gui2.b.cla()
-        gui2.c.cla()
-        gui2.d.cla()
-        season =3
-        dispatcher1 = Dispatcher.Dispatcher()
-        dispatcher1.event_list = []
-        dispatcher1.current_time = 0
+    messagebox.showinfo("Warning!", "Changing Season to Winter")
 
-        dispatcher1.add_events_from_lists(houses.house1.list_events)
-        dispatcher1.add_events_from_lists(houses.house2.list_events)
-        dispatcher1.add_events_from_lists(houses.house3.list_events)
-        dispatcher1.add_events_from_lists(houses.house4.list_events)
+    gui2.label_29['text'] = "Winter"
+    open('sampleData.txt', 'w').close()
+    open('sampleData2.txt', 'w').close()
+    open('sampleData3.txt', 'w').close()
+    open('sampleData4.txt', 'w').close()
+    gui2.a.cla()
+    gui2.b.cla()
+    gui2.c.cla()
+    gui2.d.cla()
+    season =3
+    dispatcher1 = Dispatcher.Dispatcher()
+    dispatcher1.event_list = []
+    dispatcher1.current_time = 0
 
-        dispatcher1.run_dispatcher(houses.list_house,season)
-    else:
-        gui2.root.destroy()
-        gui2.root2.destroy()
+    dispatcher1.add_events_from_lists(houses.house1.list_events)
+    dispatcher1.add_events_from_lists(houses.house2.list_events)
+    dispatcher1.add_events_from_lists(houses.house3.list_events)
+    dispatcher1.add_events_from_lists(houses.house4.list_events)
+
+    dispatcher1.run_dispatcher(houses.list_house,season)
+
+
+
 def doSpring():
-    messagebox.showinfo("Warning!", "Are you sure you want to change to Spring?")
-    S = simpledialog.askstring("Please answer one of the following", "Yes/No")
-    if S == "Yes":
-        gui2.label_29['text'] = "Spring"
-        open('sampleData.txt', 'w').close()
-        open('sampleData2.txt', 'w').close()
-        open('sampleData3.txt', 'w').close()
-        open('sampleData4.txt', 'w').close()
-        gui2.a.cla()
-        gui2.b.cla()
-        gui2.c.cla()
-        gui2.d.cla()
-        season =4
-        dispatcher1 = Dispatcher.Dispatcher()
-        dispatcher1.event_list = []
-        dispatcher1.current_time = 0
+    messagebox.showinfo("Warning!", "Changing Season to Spring")
 
-        dispatcher1.add_events_from_lists(houses.house1.list_events)
-        dispatcher1.add_events_from_lists(houses.house2.list_events)
-        dispatcher1.add_events_from_lists(houses.house3.list_events)
-        dispatcher1.add_events_from_lists(houses.house4.list_events)
+    gui2.label_29['text'] = "Spring"
+    open('sampleData.txt', 'w').close()
+    open('sampleData2.txt', 'w').close()
+    open('sampleData3.txt', 'w').close()
+    open('sampleData4.txt', 'w').close()
+    gui2.a.cla()
+    gui2.b.cla()
+    gui2.c.cla()
+    gui2.d.cla()
+    season =4
+    dispatcher1 = Dispatcher.Dispatcher()
+    dispatcher1.event_list = []
+    dispatcher1.current_time = 0
 
-        dispatcher1.run_dispatcher(houses.list_house,season)
-    else:
-        gui2.root.destroy()
-        gui2.root2.destroy()
-        
+    dispatcher1.add_events_from_lists(houses.house1.list_events)
+    dispatcher1.add_events_from_lists(houses.house2.list_events)
+    dispatcher1.add_events_from_lists(houses.house3.list_events)
+    dispatcher1.add_events_from_lists(houses.house4.list_events)
+
+    dispatcher1.run_dispatcher(houses.list_house,season)
+
+
+
 def closeWindow():
     gui2.root.destroy()
     gui2.root2.destroy()
