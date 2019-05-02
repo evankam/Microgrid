@@ -1,14 +1,14 @@
 import time
 import otherfunctions
-import houses
+# import houses
 import gui2
-from tkinter import *
+# from tkinter import *
 import matplotlib
 matplotlib.use("TkAgg")
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
-from matplotlib.figure import Figure
-import matplotlib.animation as animation
-from matplotlib import style
+# from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
+# from matplotlib.figure import Figure
+# import matplotlib.animation as animation
+# from matplotlib import style
 import houses
 
 
@@ -34,25 +34,26 @@ class Dispatcher:
         self.current_time = event.time
 
     def run_dispatcher(self,list_house,season):
-        # houses.house1.connect_to_solar()
-        # houses.house2.connect_to_solar()
-        # houses.house3.connect_to_solar()
-        # houses.house4.connect_to_solar()
+        houses.house1.connect_to_solar()
+        houses.house2.connect_to_solar()
+        houses.house3.connect_to_solar()
+        houses.house4.connect_to_solar()
         for i in range (0,len(self.event_list)):
 
             time.sleep(2)
-            # if i>0 and house_event.supply == 'exchange' and list_house_seller[0].supply == 'exchange':
-                # house_event.connect_to_solar()
-                # list_house_seller[0].connect_to_solar()
+            if i>0 and house_event.supply == 'exchange' and list_house_seller[0].supply == 'exchange':
+                house_event.connect_to_solar()
+                list_house_seller[0].connect_to_solar()
             self.solar_event(self.event_list[i], list_house,season)
             time1 = self.event_list[i].time
             house_event = self.event_list[i].house
             houseevent= str(house_event)
+            # gui2.label_31['text'] = repr(house_event)
             list_houses = house_event.neighbour
             time1 = self.event_list[i].time
             if self.event_list[i].load_usage < house_event.charge:               #we use the battery if we have enough power
                 house_event.charge += - self.event_list[i].load_usage
-                # house_event.connect_to_solar()
+                house_event.connect_to_solar()
             else:
                 list_house_seller = []
                 for j in range(0, len(list_houses)):
@@ -62,7 +63,7 @@ class Dispatcher:
                 if len(list_house_seller) ==0:
                     if house_event.bankaccount> otherfunctions.main_generator_price*self.event_list[i].load_usage:
                         house_event.bankaccount += - otherfunctions.main_generator_price*self.event_list[i].load_usage#we use the main if its cheaper
-                        # house_event.connect_to_main()
+                        house_event.connect_to_main()
                     else:
                         print('no money')
                 else:
@@ -72,7 +73,7 @@ class Dispatcher:
                     if list_house_seller[0].price > otherfunctions.main_generator_price:
                         if house_event.bankaccount> otherfunctions.main_generator_price*self.event_list[i].load_usage:
                             house_event.bankaccount += - otherfunctions.main_generator_price*self.event_list[i].load_usage    #we use the main if its cheaper
-                            # house_event.connect_to_main()
+                            house_event.connect_to_main()
                         else:
                             print('no money')
                     else:
@@ -82,10 +83,8 @@ class Dispatcher:
                             list_house_seller[0].bankaccount += list_house_seller[0].price*self.event_list[i].load_usage
 
                             list_house_seller[0].charge += - self.event_list[i].load_usage
-                            # house_event.connect_to_other_house()
-                            # list_house_seller[0].connect_to_other_house()
-                            sellerhouse = str(list_house_seller[0])
-
+                            house_event.connect_to_other_house()
+                            list_house_seller[0].connect_to_other_house()
                         else:
                             print('no money')
             print("event" + str(i))
@@ -102,6 +101,7 @@ class Dispatcher:
             pullData4 = open("sampleData4.txt","a+")
             pullData4.write(str(time1)+ "," + str(int(houses.house4.charge)) +"\n")
             pullData4.close()
+
             loop_active = True
             while loop_active:
                 gui2.root2.update()

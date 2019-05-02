@@ -9,6 +9,7 @@ class Event:
         self.time = random.randint(0, 1080)
         self.house = house
         self.load_usage = random.randint(1,50)
+
 event1 = Event()
 event1.time = 195
 event1.load_usage = 16

@@ -1,15 +1,15 @@
 from tkinter import messagebox, simpledialog
 
-from pyfirmata import Arduino,util
-import time
-import random
-from tkinter import *
-from decimal import Decimal
+# from pyfirmata import Arduino,util
+# import time
+# import random
+# from tkinter import *
+# from decimal import Decimal
 import houses
 import gui2
 import events
 import Dispatcher
-import otherfunctions
+# import otherfunctions
 from tkinter import *
 import matplotlib
 
@@ -33,6 +33,10 @@ def doSummer():
     messagebox.showinfo("Warning!", "Changing Season to Summer")
 
     gui2.label_29['text'] = "Summer"
+    houses.house1.charge = 100
+    houses.house2.charge = 100
+    houses.house3.charge = 50
+    houses.house4.charge = 10
     open('sampleData.txt', 'w').close()
     open('sampleData2.txt', 'w').close()
     open('sampleData3.txt', 'w').close()
@@ -57,6 +61,10 @@ def doFall():
     messagebox.showinfo("Warning!", "Changing Season to Fall")
 
     gui2.label_29['text'] = "Fall"
+    houses.house1.charge = 100
+    houses.house2.charge = 100
+    houses.house3.charge = 50
+    houses.house4.charge = 10
     open('sampleData.txt', 'w').close()
     open('sampleData2.txt', 'w').close()
     open('sampleData3.txt', 'w').close()
@@ -83,6 +91,10 @@ def doWinter():
     messagebox.showinfo("Warning!", "Changing Season to Winter")
 
     gui2.label_29['text'] = "Winter"
+    houses.house1.charge = 100
+    houses.house2.charge = 100
+    houses.house3.charge = 50
+    houses.house4.charge = 10
     open('sampleData.txt', 'w').close()
     open('sampleData2.txt', 'w').close()
     open('sampleData3.txt', 'w').close()
@@ -109,6 +121,10 @@ def doSpring():
     messagebox.showinfo("Warning!", "Changing Season to Spring")
 
     gui2.label_29['text'] = "Spring"
+    houses.house1.charge = 100
+    houses.house2.charge = 100
+    houses.house3.charge = 50
+    houses.house4.charge = 10
     open('sampleData.txt', 'w').close()
     open('sampleData2.txt', 'w').close()
     open('sampleData3.txt', 'w').close()

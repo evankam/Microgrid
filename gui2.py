@@ -19,7 +19,7 @@ root = Tk()
 root.geometry("600x600+0+0")
 
 root2= Tk()
-root2.geometry("1280x230+0+0")
+root2.geometry("1280x270+0+0")
 
 
 
@@ -62,6 +62,9 @@ label_27 = Label(root2, text = "Initializing")
 label_28 = Label(root2, text = "Season:")
 label_29 = Label(root2, text = S)
 
+label_30 = Label(root2, text = "House Event:")
+label_31 = Label(root2, text = "Initializing")
+
 label_0.config(font=labelfonthouse)
 label_1.config(font=labelfonthouse)
 label_2.config(font=labelfonthouse)
@@ -95,6 +98,9 @@ label_27.config(font=labelfontnumbers)
 
 label_28.config(font=labelfontattributes)
 label_29.config(font=labelfontattributes)
+
+label_30.config(font= labelfontattributes)
+label_31.config(font = labelfontattributes)
 
 label_0.grid(row= 0, column = 0, columnspan = 3)
 label_1.grid(row = 0, column = 3, columnspan = 3)
@@ -131,8 +137,11 @@ label_25.grid(row = 6, column = 4)
 label_26.grid(row = 6, column = 7)
 label_27.grid(row = 6, column = 10)
 
-label_28.grid(row = 8, column =0)
+label_28.grid(row = 8, column =0, sticky = E)
 label_29.grid(row = 8, column =1)
+
+label_30.grid(row = 9, column = 0, sticky = E)
+label_31.grid(row = 9, column = 1)
 
 f = Figure (figsize = (5.5,5.5), dpi = 100)
 a = f.add_subplot(111)
@@ -215,5 +224,5 @@ def set_label():
     label_25['text'] = str(round(houses.house2.bankaccount,2)) + "$"
     label_26['text'] = str(round(houses.house3.bankaccount,2)) + "$"
     label_27['text'] = str(round(houses.house4.bankaccount,2)) + "$"
-    root2.after(1000, set_label)
+    root2.after(2000, set_label)
 
