@@ -15,10 +15,10 @@ labelfontnumbers = ("times", 20, 'italic')
 style.use("ggplot")
 
 
-root = Tk()
+root = Tk() #creating the window for graph
 root.geometry("600x600+0+0")
 
-root2= Tk()
+root2= Tk() #creating the window for status update
 root2.geometry("1280x270+0+0")
 
 
@@ -143,7 +143,7 @@ label_29.grid(row = 8, column =1)
 label_30.grid(row = 9, column = 0, sticky = E)
 label_31.grid(row = 9, column = 1)
 
-f = Figure (figsize = (5.5,5.5), dpi = 100)
+f = Figure (figsize = (5.5,5.5), dpi = 100) #adding figure in root along with the subplots
 a = f.add_subplot(111)
 b = f.add_subplot(111)
 c = f.add_subplot(111)
@@ -151,7 +151,7 @@ d = f.add_subplot(111)
 canvas = FigureCanvasTkAgg(f)
 canvas.get_tk_widget().grid(row = 20)
 
-def animate(i):
+def animate(i): #to create a liveplot
     pullData = open("sampleData.txt","r").read()
     pullData2 = open("sampleData2.txt","r").read()
     pullData3 = open("sampleData3.txt","r").read()
@@ -200,7 +200,7 @@ def animate(i):
     a.set_xlabel('Time')
     a.set_ylabel('Solar Charges (%)')
 
-ani = animation.FuncAnimation(f,animate)
+ani = animation.FuncAnimation(f,animate) #clearing the list for next simulation
 open('sampleData.txt', 'w').close()
 open('sampleData2.txt', 'w').close()
 open('sampleData3.txt', 'w').close()
@@ -211,7 +211,7 @@ open('sampleData4.txt', 'w').close()
 
 
 
-def set_label():
+def set_label(): #updating the label
     label_16['text'] = houses.house1.supply
     label_17['text'] = houses.house2.supply
     label_18['text'] = houses.house3.supply

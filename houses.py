@@ -100,7 +100,6 @@ class House:
         else:
             self.price = (15+10/9) -(2/9)*charge
 
-
 house1 = House()
 house1.supply = 'own battery'
 house1.price = 0

@@ -1,15 +1,10 @@
 from tkinter import messagebox, simpledialog
 
-# from pyfirmata import Arduino,util
-# import time
-# import random
-# from tkinter import *
-# from decimal import Decimal
+
 import houses
 import gui2
 import events
 import Dispatcher
-# import otherfunctions
 from tkinter import *
 import matplotlib
 
@@ -18,15 +13,6 @@ matplotlib.use("TkAgg")
 import tkinter.simpledialog
 import tkinter.messagebox
 
-# root3= Tk()
-# w = Label(root3, text="Test")
-# w.pack()
-# messagebox.showinfo("Welcome to the Microgrid Program", "Please click the OK button")
-#
-# S = simpledialog.askstring("Choose a Season", "What's the season would you like to see in the demo? (Summer, Fall, Winter, Spring)")
-#
-# output = "Your season is, {}".format(S)
-# root3.destroy()
 S = "Summer"
 
 def doSummer():
