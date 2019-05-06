@@ -10,6 +10,7 @@ matplotlib.use("TkAgg")
 # import matplotlib.animation as animation
 # from matplotlib import style
 import houses
+import math
 
 
 
@@ -45,8 +46,13 @@ class Dispatcher:
                 list_house_seller[0].connect_to_solar()
             self.solar_event(self.event_list[i], list_house,season)         #acquiring the next event
             time1 = self.event_list[i].time                     #acquiring the time of the event
-            house_event = self.event_list[i].house              #acquiring the event house
-            gui2.label_31['text'] = "House " + str(house_event.number) #updating gui
+            house_event = self.event_list[i].house   #acquiring the event house
+            gui2.label_31['text'] = "House " + str(house_event.number) #updating gui house event and event time
+            hours = 6 + time1 // 60
+            minutes = time1%60
+            time2 = "%d:%02d" % (hours, minutes)
+            gui2.label_33['text'] = str(time2)
+
             list_houses = house_event.neighbour
             time1 = self.event_list[i].time
             if self.event_list[i].load_usage < house_event.charge:               #we use the battery if we have enough power

@@ -19,7 +19,7 @@ root = Tk() #creating the window for graph
 root.geometry("600x600+0+0")
 
 root2= Tk() #creating the window for status update
-root2.geometry("1280x270+0+0")
+root2.geometry("1280x300+0+0")
 
 
 
@@ -65,6 +65,10 @@ label_29 = Label(root2, text = S)
 label_30 = Label(root2, text = "House Event:")
 label_31 = Label(root2, text = "Initializing")
 
+label_32 = Label(root2, text = "Event Time: ")
+label_33 = Label(root2, text = "Initializing")
+
+
 label_0.config(font=labelfonthouse)
 label_1.config(font=labelfonthouse)
 label_2.config(font=labelfonthouse)
@@ -101,6 +105,10 @@ label_29.config(font=labelfontattributes)
 
 label_30.config(font= labelfontattributes)
 label_31.config(font = labelfontattributes)
+
+label_32.config(font= labelfontattributes)
+label_33.config(font = labelfontattributes)
+
 
 label_0.grid(row= 0, column = 0, columnspan = 3)
 label_1.grid(row = 0, column = 3, columnspan = 3)
@@ -142,6 +150,10 @@ label_29.grid(row = 8, column =1)
 
 label_30.grid(row = 9, column = 0, sticky = E)
 label_31.grid(row = 9, column = 1)
+
+label_32.grid(row = 10, column = 0, sticky = E)
+label_33.grid(row = 10, column = 1)
+
 
 f = Figure (figsize = (5.5,5.5), dpi = 100) #adding figure in root along with the subplots
 a = f.add_subplot(111)
