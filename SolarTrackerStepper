@@ -1,0 +1,78 @@
+
+int ldrlt = 2; 
+int ldrrt = 3; 
+
+
+const int stepPin = 5; 
+const int dirPin = 2; 
+const int enPin = 8;
+
+ void setup() 
+{
+  Serial.begin(9600);
+  // Sets the two pins as Outputs
+  pinMode(stepPin,OUTPUT); 
+  pinMode(dirPin,OUTPUT);
+
+  pinMode(enPin,OUTPUT);
+  digitalWrite(enPin,LOW);
+}
+
+void loop() 
+{
+  int lt = analogRead(ldrlt); // top left
+  int rt = analogRead(ldrrt); // top right
+    
+  
+  int dtime = 100;
+  int tol = 500;
+  
+  int avl = (lt); // average value left
+  int avr = (rt); // average value right
+
+  int dhoriz = avl - avr;
+  
+  
+  Serial.print(avl);
+  Serial.print(" ");
+  Serial.print(avr);
+  Serial.print("   ");
+  Serial.print(dtime);
+  Serial.print("   ");
+  Serial.print(tol);
+  Serial.println(" ");
+  
+   
+  if (-1*tol > dhoriz || dhoriz > tol) 
+  {
+  if (avl > avr)
+  {
+    digitalWrite(dirPin,LOW);
+    for(int x = 0; x < 100; x++) 
+    {
+    digitalWrite(stepPin,HIGH);
+    delayMicroseconds(500);
+    digitalWrite(stepPin,LOW);
+    delayMicroseconds(500);
+    } 
+  }
+  else if (avl < avr)
+  {
+    digitalWrite(dirPin,HIGH);
+    for(int x = 0; x < 100; x++) 
+    {
+    digitalWrite(stepPin,HIGH);
+    delayMicroseconds(500);
+    digitalWrite(stepPin,LOW);
+    delayMicroseconds(500);
+    }
+  }
+  else if (avl = avr)
+  {
+    // nothing
+  }
+  //horizontal.write(servoh);
+  }
+   delay(dtime);
+
+}
