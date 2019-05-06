@@ -1,0 +1,75 @@
+#include <Servo.h> 
+
+// 180 horizontal MAX
+Servo horizontal; 
+int servoh = 360;   
+
+int servohLimitHigh = 180;
+
+int servohLimitLow = 3;
+
+
+int ldrlt = 2; 
+int ldrrt = 3; 
+
+void setup()
+{
+  Serial.begin(9600);
+
+  horizontal.attach(9); 
+  horizontal.write(180);
+    delay(3);
+}
+
+void loop() 
+{
+  int lt = analogRead(ldrlt); // top left
+  int rt = analogRead(ldrrt); // top right
+    
+  
+  int dtime = 100;
+  int tol = 30;
+  
+  int avl = (lt); // average value left
+  int avr = (rt); // average value right
+
+  int dhoriz = avl - avr;
+  
+  
+  Serial.print(avl);
+  Serial.print(" ");
+  Serial.print(avr);
+  Serial.print("   ");
+  Serial.print(dtime);
+  Serial.print("   ");
+  Serial.print(tol);
+  Serial.println(" ");
+  
+   
+  if (-1*tol > dhoriz || dhoriz > tol) 
+  {
+  if (avl > avr)
+  {
+    servoh = --servoh;
+    if (servoh < servohLimitLow)
+    {
+    servoh = servohLimitLow;
+    }
+  }
+  else if (avl < avr)
+  {
+    servoh = ++servoh;
+     if (servoh > servohLimitHigh)
+     {
+     servoh = servohLimitHigh;
+     }
+  }
+  else if (avl = avr)
+  {
+    // nothing
+  }
+  horizontal.write(servoh);
+  }
+   delay(dtime);
+
+}
