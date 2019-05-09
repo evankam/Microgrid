@@ -18,6 +18,7 @@ class House:
         self.list_events = []
         self.neighbour = []
         self.number = 0
+        self.efficiency = 0
 
 
     def connect_to_solar(self):
@@ -111,6 +112,7 @@ house1.bankaccount = 500
 house1.list_events = []
 house1.neighbour= []
 house1.number = 1
+house1.efficiency = 0.7
 
 
 house2 = House()
@@ -124,6 +126,7 @@ house2.bankaccount = 500
 house2.list_events = []
 house2.neighbour= []
 house2.number = 2
+house2.efficiency = 0.75
 
 house3 = House()
 house3.supply = 'own battery'
@@ -136,6 +139,7 @@ house3.bankaccount = 500
 house3.list_events = []
 house3.neighbour = []
 house3.number = 3
+house3.efficiency = 0.9
 
 house4 = House()
 house4.supply = 'own battery'
@@ -148,6 +152,7 @@ house4.bankaccount = 500
 house4.list_events = []
 house4.neighbour = []
 house4.number = 4
+house4.efficiency = 0.8
 
 
 

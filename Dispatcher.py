@@ -29,16 +29,16 @@ class Dispatcher:
     def solar_event(self,event, list_house,season):
         current_time = self.current_time
         for i in range (0,len(list_house)):
-            list_house[i].charge += otherfunctions.solar(event.time,season) - otherfunctions.solar(self.current_time,season)
+            list_house[i].charge += list_house[i].efficiency*(otherfunctions.solar(event.time,season) - otherfunctions.solar(self.current_time,season))
             if list_house[i].charge > 100:
                 list_house[i].charge = 100
         self.current_time = event.time
 
     def run_dispatcher(self,list_house,season):
-        # houses.house1.connect_to_solar() #initialization for 4 houses
-        # houses.house2.connect_to_solar()
-        # houses.house3.connect_to_solar()
-        # houses.house4.connect_to_solar()
+        houses.house1.connect_to_solar() #initialization for 4 houses
+        houses.house2.connect_to_solar()
+        houses.house3.connect_to_solar()
+        houses.house4.connect_to_solar()
         for i in range (0,len(self.event_list)):
             time.sleep(2)
             if i>0 and house_event.supply == 'exchange' and list_house_seller[0].supply == 'exchange':
@@ -47,7 +47,15 @@ class Dispatcher:
             self.solar_event(self.event_list[i], list_house,season)         #acquiring the next event
             time1 = self.event_list[i].time                     #acquiring the time of the event
             house_event = self.event_list[i].house   #acquiring the event house
-            gui2.label_31['text'] = "House " + str(house_event.number) #updating gui house event and event time
+            if house_event.number == 1:             #updating gui house event and event time
+                gui2.label_31['text'] = "Shweta"
+            if house_event.number == 2:
+                gui2.label_31['text'] = "Liezl"
+            if house_event.number == 3:
+                gui2.label_31['text'] = "Evan"
+            if house_event.number == 4:
+                gui2.label_31['text'] = "Joer"
+
             hours = 6 + time1 // 60
             minutes = time1%60
             time2 = "%d:%02d" % (hours, minutes)
