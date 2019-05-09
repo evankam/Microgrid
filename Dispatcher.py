@@ -57,7 +57,7 @@ class Dispatcher:
             time1 = self.event_list[i].time
             if self.event_list[i].load_usage < house_event.charge:               #we use the battery if we have enough power
                 house_event.charge += - self.event_list[i].load_usage
-                # house_event.connect_to_solar()
+                house_event.connect_to_solar()
             else:
                 list_house_seller = []
                 for j in range(0, len(list_houses)):        #if not we compute a list of houses having enough load
@@ -66,7 +66,7 @@ class Dispatcher:
                 if len(list_house_seller) ==0:      #if no one wants to sell electricity then we buy it from main generator if we have enough money
                     if house_event.bankaccount> otherfunctions.main_generator_price*self.event_list[i].load_usage:
                         house_event.bankaccount += - otherfunctions.main_generator_price*self.event_list[i].load_usage
-                        # house_event.connect_to_main()
+                        house_event.connect_to_main()
                     else:
                         print('no money')
                 else:
@@ -76,7 +76,7 @@ class Dispatcher:
                     if list_house_seller[0].price > otherfunctions.main_generator_price:            #we use the main if its cheaper
                         if house_event.bankaccount> otherfunctions.main_generator_price*self.event_list[i].load_usage:
                             house_event.bankaccount += - otherfunctions.main_generator_price*self.event_list[i].load_usage
-                            # house_event.connect_to_main()
+                            house_event.connect_to_main()
                         else:
                             print('no money')
                     else:
@@ -84,8 +84,8 @@ class Dispatcher:
                             house_event.bankaccount += - list_house_seller[0].price*self.event_list[i].load_usage
                             list_house_seller[0].bankaccount += list_house_seller[0].price*self.event_list[i].load_usage
                             list_house_seller[0].charge += - self.event_list[i].load_usage
-                            # house_event.connect_to_other_house()
-                            # list_house_seller[0].connect_to_other_house()
+                            house_event.connect_to_other_house()
+                            list_house_seller[0].connect_to_other_house()
                         else:
                             print('no money')
             pullData1 = open("sampleData.txt","a+")  #updating the list for GUI purposes
