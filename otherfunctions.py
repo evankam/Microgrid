@@ -17,4 +17,4 @@ def solar(time,season):
         return(y)
 
 
-main_generator_price = 3
+main_generator_price = 5

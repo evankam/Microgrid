@@ -10,25 +10,25 @@ class Event:
     def define_event_random(self, house):
         self.time = random.randint(1, 780)
         self.house = house
-        self.load_usage = random.randint(1,10)
+        self.load_usage = random.randint(1,5)
 
 
-for i in range(0,30):
+for i in range(0,25):
     event_rand = Event()
     event_rand.define_event_random(houses.house1)
     houses.house1.list_events.append(event_rand)
 
-for i in range(0,30):
+for i in range(0,25):
     event_rand = Event()
     event_rand.define_event_random(houses.house2)
     houses.house2.list_events.append(event_rand)
 
-for i in range(0,30):
+for i in range(0,25):
     event_rand = Event()
     event_rand.define_event_random(houses.house3)
     houses.house3.list_events.append(event_rand)
 
-for i in range(0,30):
+for i in range(0,25):
     event_rand = Event()
     event_rand.define_event_random(houses.house4)
     houses.house4.list_events.append(event_rand)
